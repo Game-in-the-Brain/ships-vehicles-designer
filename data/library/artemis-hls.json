@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "NASA Artemis Program, HLS Concept Studies",
+    "calibration": false
+  },
+  "vehicle": {
+    "id": "artemis-hls",
+    "name": "Artemis Human Landing System",
+    "type": "LEV",
+    "tl": 8.5,
+    "pmr": 8,
+    "structures": [
+      {
+        "id": "hls-transfer",
+        "name": "Transfer Element",
+        "massTons": 8.5,
+        "cost": 45,
+        "capacityTons": 32.0,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "hls-t-engine",
+            "type": "engine",
+            "name": "RL-10C Transfer Engine ×2",
+            "massKg": 600,
+            "costMusd": 12.0,
+            "engineAssembly": {
+              "id": "hls-t-engine-assembly",
+              "name": "RL-10C ×2",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 2,
+              "vacuumIsp": 465,
+              "seaLevelIsp": null,
+              "totalThrustKn": 212,
+              "dryMassKg": 600,
+              "costMusd": 12.0,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "hls-t-fuel",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Transfer Tank",
+            "massKg": 24000,
+            "costMusd": 24.0,
+            "fuelTank": {
+              "id": "hls-t-fuel-tank",
+              "name": "LH2/LOX Transfer Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 23800,
+              "tankMassKg": 200,
+              "ullageFraction": 0.03,
+              "totalMassKg": 24000
+            }
+          },
+          {
+            "id": "hls-t-solar",
+            "type": "sensor",
+            "name": "Solar Array Power System",
+            "massKg": 450,
+            "costMusd": 8.0,
+            "sensor": {
+              "id": "sensor-solar-power",
+              "name": "Solar Array Power System",
+              "shortName": "Solar Power",
+              "category": "communication",
+              "tl": 8.4,
+              "year": 2025,
+              "massKg": 450,
+              "costMusd": 8.0,
+              "powerWatts": 15000,
+              "range": "surface",
+              "notes": "Deployable solar arrays for surface power. Basis: Artemis HLS concept."
+            }
+          }
+        ],
+        "attachedMassTons": 25.05,
+        "attachedCost": 44.0,
+        "totalMassTons": 33.55,
+        "totalCost": 89.0,
+        "overCapacity": false,
+        "capacityUsedPercent": 78.3
+      },
+      {
+        "id": "hls-lander",
+        "name": "Lander Module",
+        "massTons": 12.0,
+        "cost": 120,
+        "capacityTons": 52.0,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "hls-l-engine",
+            "type": "engine",
+            "name": "BE-7 Landing Engine ×4",
+            "massKg": 1200,
+            "costMusd": 16.0,
+            "engineAssembly": {
+              "id": "hls-l-engine-assembly",
+              "name": "BE-7 Deep Throttle ×4",
+              "powerPlantId": "gg-hydrolox-2",
+              "driveId": "extendable-1",
+              "count": 4,
+              "vacuumIsp": 465,
+              "seaLevelIsp": null,
+              "totalThrustKn": 400,
+              "dryMassKg": 1200,
+              "costMusd": 16.0,
+              "throttleRange": [0.20, 1.0]
+            }
+          },
+          {
+            "id": "hls-l-fuel",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Landing Tank",
+            "massKg": 36000,
+            "costMusd": 36.0,
+            "fuelTank": {
+              "id": "hls-l-fuel-tank",
+              "name": "LH2/LOX Landing Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 35700,
+              "tankMassKg": 300,
+              "ullageFraction": 0.03,
+              "totalMassKg": 36000
+            }
+          },
+          {
+            "id": "hls-l-crew",
+            "type": "crew_module",
+            "name": "Four-Seat Crew Cabin",
+            "massKg": 4200,
+            "costMusd": 25.0,
+            "crewModule": {
+              "id": "crew-seven-capsule",
+              "name": "Four-Seat Crew Cabin",
+              "shortName": "4-Seat Cabin",
+              "tl": 8.4,
+              "year": 2025,
+              "seats": 4,
+              "massKg": 4200,
+              "costMusd": 25.0,
+              "volumeM3": 18.0,
+              "missionDurationDays": 14,
+              "notes": "Pressurized cabin with suit ports and surface airlock. Basis: Artemis HLS concepts."
+            }
+          },
+          {
+            "id": "hls-l-bridge",
+            "type": "bridge",
+            "name": "Touchscreen Bridge",
+            "massKg": 400,
+            "costMusd": 4.0,
+            "bridgeType": {
+              "id": "bridge-touchscreen",
+              "name": "Touchscreen Bridge",
+              "shortName": "Touch Bridge",
+              "tl": 8.4,
+              "year": 2020,
+              "stations": 3,
+              "massKg": 400,
+              "costMusd": 4.0,
+              "minCrew": 1,
+              "maxCrew": 4,
+              "notes": "Large touchscreens with customizable layouts for lunar surface ops. Basis: Crew Dragon, HLS concepts."
+            }
+          },
+          {
+            "id": "hls-l-lidar",
+            "type": "sensor",
+            "name": "LiDAR Altimeter",
+            "massKg": 35,
+            "costMusd": 3.5,
+            "sensor": {
+              "id": "sensor-lidar",
+              "name": "LiDAR Altimeter",
+              "shortName": "LiDAR",
+              "category": "landing",
+              "tl": 8.4,
+              "year": 2020,
+              "massKg": 35,
+              "costMusd": 3.5,
+              "powerWatts": 120,
+              "range": "surface",
+              "notes": "3D terrain mapping and hazard avoidance for precision landing. Basis: ALHAT, Artemis HLS."
+            }
+          },
+          {
+            "id": "hls-l-vision",
+            "type": "sensor",
+            "name": "Vision-Based Navigation Camera",
+            "massKg": 18,
+            "costMusd": 2.0,
+            "sensor": {
+              "id": "sensor-vision",
+              "name": "Vision-Based Navigation Camera",
+              "shortName": "Vision Nav",
+              "category": "landing",
+              "tl": 8.4,
+              "year": 2020,
+              "massKg": 18,
+              "costMusd": 2.0,
+              "powerWatts": 45,
+              "range": "surface",
+              "notes": "Optical terrain-relative navigation for landing without GPS. Basis: Artemis HLS sensors."
+            }
+          },
+          {
+            "id": "hls-l-legs",
+            "type": "recovery",
+            "name": "Articulated Landing Legs ×4",
+            "massKg": 850,
+            "costMusd": 8.0
+          }
+        ],
+        "attachedMassTons": 42.703,
+        "attachedCost": 58.5,
+        "totalMassTons": 54.703,
+        "totalCost": 178.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 82.1
+      }
+    ],
+    "totalMassTons": 88.253,
+    "totalCost": 267.5,
+    "totalDeltaV": 5200,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2025-01-01T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "Artemis Human Landing System concept. Two-stage design: Transfer Element delivers lander to low lunar orbit; Lander Module descends with crew, supports 4 astronauts for up to 14 days on surface. Deep-throttle hydrolox engines for precision landing."
+  }
+}

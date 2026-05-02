@@ -1,0 +1,271 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "NASA Orion CEV Specifications, ESA SM Module",
+    "calibration": false
+  },
+  "vehicle": {
+    "id": "orion-crew",
+    "name": "Orion Crew Vehicle",
+    "type": "Orb",
+    "tl": 8.2,
+    "pmr": 8,
+    "structures": [
+      {
+        "id": "orion-service",
+        "name": "European Service Module",
+        "massTons": 6.5,
+        "cost": 80,
+        "capacityTons": 18.0,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "orion-s-engine",
+            "type": "engine",
+            "name": "Orbital Maneuvering Engine ×1",
+            "massKg": 350,
+            "costMusd": 6.0,
+            "engineAssembly": {
+              "id": "orion-s-engine-assembly",
+              "name": "AJ10-190 OME",
+              "powerPlantId": "hyg-2",
+              "driveId": "gimbaled-1",
+              "count": 1,
+              "vacuumIsp": 316,
+              "seaLevelIsp": null,
+              "totalThrustKn": 26.7,
+              "dryMassKg": 350,
+              "costMusd": 6.0,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "orion-s-fuel",
+            "type": "fuel_tank",
+            "name": "MMH/N2O4 Service Tank",
+            "massKg": 9100,
+            "costMusd": 9.1,
+            "fuelTank": {
+              "id": "orion-s-fuel-tank",
+              "name": "MMH/N2O4 Service Tank",
+              "fuelType": "MMH/N2O4",
+              "propellantMassKg": 9000,
+              "tankMassKg": 100,
+              "ullageFraction": 0.02,
+              "totalMassKg": 9100
+            }
+          },
+          {
+            "id": "orion-s-rcs",
+            "type": "engine",
+            "name": "RCS Thruster Quad ×6",
+            "massKg": 420,
+            "costMusd": 4.8,
+            "engineAssembly": {
+              "id": "orion-s-rcs-assembly",
+              "name": "RCS Quad ×6",
+              "powerPlantId": "hyg-2",
+              "driveId": "gimbaled-1",
+              "count": 6,
+              "vacuumIsp": 300,
+              "seaLevelIsp": null,
+              "totalThrustKn": 6.0,
+              "dryMassKg": 420,
+              "costMusd": 4.8,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "orion-s-solar",
+            "type": "sensor",
+            "name": "Solar Array Power System",
+            "massKg": 580,
+            "costMusd": 12.0,
+            "sensor": {
+              "id": "sensor-solar-orion",
+              "name": "Solar Array Power System",
+              "shortName": "Solar Power",
+              "category": "communication",
+              "tl": 8.2,
+              "year": 2014,
+              "massKg": 580,
+              "costMusd": 12.0,
+              "powerWatts": 11000,
+              "range": "deep_space",
+              "notes": "X-wing deployable solar arrays. Basis: European Service Module."
+            }
+          },
+          {
+            "id": "orion-s-comm",
+            "type": "sensor",
+            "name": "Optical Communication Terminal",
+            "massKg": 45,
+            "costMusd": 8.0,
+            "sensor": {
+              "id": "sensor-optical-comms",
+              "name": "Optical Communication Terminal",
+              "shortName": "Optical Comm",
+              "category": "communication",
+              "tl": 8.4,
+              "year": 2020,
+              "massKg": 45,
+              "costMusd": 8.0,
+              "powerWatts": 200,
+              "range": "deep_space",
+              "notes": "Laser-based high-bandwidth communication for deep space. Basis: NASA LCRD, Orion Block upgrades."
+            }
+          }
+        ],
+        "attachedMassTons": 10.995,
+        "attachedCost": 39.9,
+        "totalMassTons": 17.495,
+        "totalCost": 119.9,
+        "overCapacity": false,
+        "capacityUsedPercent": 61.1
+      },
+      {
+        "id": "orion-crew-module",
+        "name": "Crew Module",
+        "massTons": 5.5,
+        "cost": 180,
+        "capacityTons": 12.0,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "orion-c-crew",
+            "type": "crew_module",
+            "name": "Four-Seat Crew Capsule",
+            "massKg": 4200,
+            "costMusd": 25.0,
+            "crewModule": {
+              "id": "crew-seven-capsule",
+              "name": "Four-Seat Crew Capsule",
+              "shortName": "4-Seat Capsule",
+              "tl": 8.4,
+              "year": 2014,
+              "seats": 4,
+              "massKg": 4200,
+              "costMusd": 25.0,
+              "volumeM3": 9.3,
+              "missionDurationDays": 21,
+              "notes": "Modern crew capsule with touchscreen interfaces and abort capability. Basis: Orion CM."
+            }
+          },
+          {
+            "id": "orion-c-bridge",
+            "type": "bridge",
+            "name": "Touchscreen Bridge",
+            "massKg": 400,
+            "costMusd": 4.0,
+            "bridgeType": {
+              "id": "bridge-touchscreen",
+              "name": "Touchscreen Bridge",
+              "shortName": "Touch Bridge",
+              "tl": 8.4,
+              "year": 2020,
+              "stations": 3,
+              "massKg": 400,
+              "costMusd": 4.0,
+              "minCrew": 1,
+              "maxCrew": 4,
+              "notes": "Large touchscreens with customizable layouts. Minimal physical buttons. Basis: Orion CM displays."
+            }
+          },
+          {
+            "id": "orion-c-heat-shield",
+            "type": "recovery",
+            "name": "Avcoat Heat Shield",
+            "massKg": 800,
+            "costMusd": 15.0
+          },
+          {
+            "id": "orion-c-parachutes",
+            "type": "recovery",
+            "name": "Drogue + Main + Redundancy Parachutes",
+            "massKg": 350,
+            "costMusd": 8.0
+          },
+          {
+            "id": "orion-c-gnc",
+            "type": "avionics",
+            "name": "Redundant Digital Flight System",
+            "massKg": 70,
+            "costMusd": 4.2,
+            "avionicsUnit": {
+              "id": "av-guidance-82",
+              "category": "guidance",
+              "name": "Redundant Digital Flight System",
+              "shortName": "Digital GNC",
+              "tl": 8.2,
+              "yearRange": "2010–2019",
+              "massKg": 70,
+              "costMusd": 4.2,
+              "powerWatts": 250,
+              "reliability": 0.97,
+              "capabilities": ["guidance", "navigation", "control", "rendezvous", "autodock"],
+              "redundancy": "triple_modular",
+              "computingMips": 5000,
+              "notes": "Triple-redundant digital flight computers with GPS and star tracker fusion. Basis: Orion GNC."
+            }
+          },
+          {
+            "id": "orion-c-gps",
+            "type": "sensor",
+            "name": "GPS Receiver",
+            "massKg": 4,
+            "costMusd": 0.8,
+            "sensor": {
+              "id": "sensor-gps",
+              "name": "GPS Receiver",
+              "shortName": "GPS",
+              "category": "navigation",
+              "tl": 8.2,
+              "year": 2010,
+              "massKg": 4,
+              "costMusd": 0.8,
+              "powerWatts": 15,
+              "range": "orbital",
+              "notes": "Multi-constellation GPS receiver for LEO and cislunar navigation. Basis: Orion nav systems."
+            }
+          },
+          {
+            "id": "orion-c-docking",
+            "type": "sensor",
+            "name": "Docking Camera + LIDAR",
+            "massKg": 22,
+            "costMusd": 3.5,
+            "sensor": {
+              "id": "sensor-docking",
+              "name": "Docking Camera + LIDAR",
+              "shortName": "Docking Sensor",
+              "category": "landing",
+              "tl": 8.4,
+              "year": 2020,
+              "massKg": 22,
+              "costMusd": 3.5,
+              "powerWatts": 80,
+              "range": "orbital",
+              "notes": "Vision-based and LiDAR docking sensors for ISS and lunar gateway rendezvous. Basis: Orion docking system."
+            }
+          }
+        ],
+        "attachedMassTons": 5.846,
+        "attachedCost": 58.5,
+        "totalMassTons": 11.346,
+        "totalCost": 238.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 48.7
+      }
+    ],
+    "totalMassTons": 28.841,
+    "totalCost": 358.4,
+    "totalDeltaV": 1350,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2014-12-05T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "Orion Crew Vehicle. Modern deep-space crew capsule for Artemis lunar missions and beyond. Crew of 4 for up to 21 days. European Service Module provides propulsion, power, and consumables. First flight: EFT-1 (2014). Artemis I uncrewed lunar flyby (2022)."
+  }
+}

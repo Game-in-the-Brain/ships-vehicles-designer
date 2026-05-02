@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "schema_version": "0.1",
+    "description": "Mneme Ship Design System — Sensor Catalog. Sensors are Level-2 components that provide detection, navigation, and scientific data.",
+    "units": {
+      "mass": "kg",
+      "cost": "millions USD",
+      "power": "watts"
+    }
+  },
+  "sensors": [
+    {
+      "id": "sensor-optical-nav",
+      "name": "Optical Navigation Sextant",
+      "shortName": "Optical Nav",
+      "category": "navigation",
+      "tl": 7.2,
+      "year": 1966,
+      "massKg": 5,
+      "costMusd": 0.5,
+      "powerWatts": 0,
+      "range": "visual",
+      "notes": "Manual star sightings for position fixes. Basis: Apollo sextant."
+    },
+    {
+      "id": "sensor-star-tracker",
+      "name": "Star Tracker",
+      "shortName": "Star Tracker",
+      "category": "navigation",
+      "tl": 7.4,
+      "year": 1972,
+      "massKg": 8,
+      "costMusd": 1.0,
+      "powerWatts": 5,
+      "range": "deep_space",
+      "notes": "Automatic star pattern recognition for attitude determination. Basis: Skylab, Viking."
+    },
+    {
+      "id": "sensor-radar-alt",
+      "name": "Radar Altimeter",
+      "shortName": "Radar Alt",
+      "category": "landing",
+      "tl": 7.4,
+      "year": 1969,
+      "massKg": 12,
+      "costMusd": 2.0,
+      "powerWatts": 25,
+      "range": "0–100 km",
+      "notes": "Measures altitude above surface for landing. Basis: Apollo LM radar, Shuttle landing radar."
+    },
+    {
+      "id": "sensor-gps",
+      "name": "GPS Receiver",
+      "shortName": "GPS",
+      "category": "navigation",
+      "tl": 7.8,
+      "year": 1990,
+      "massKg": 3,
+      "costMusd": 0.3,
+      "powerWatts": 8,
+      "range": "LEO",
+      "notes": "Satellite navigation for LEO and surface. Basis: First space GPS receivers."
+    },
+    {
+      "id": "sensor-lidar",
+      "name": "LiDAR Altimeter",
+      "shortName": "LiDAR",
+      "category": "landing",
+      "tl": 8.2,
+      "year": 2012,
+      "massKg": 6,
+      "costMusd": 1.5,
+      "powerWatts": 15,
+      "range": "0–50 km",
+      "notes": "Laser ranging for precision landing and terrain mapping. Basis: MSL sky crane, OSIRIS-REx."
+    },
+    {
+      "id": "sensor-vision",
+      "name": "Vision-Based Navigation Camera",
+      "shortName": "Vision Nav",
+      "category": "landing",
+      "tl": 8.2,
+      "year": 2015,
+      "massKg": 4,
+      "costMusd": 1.0,
+      "powerWatts": 12,
+      "range": "visual",
+      "notes": "Camera-based terrain relative navigation for autonomous landing. Basis: Falcon 9 landing, HLS."
+    },
+    {
+      "id": "sensor-spectrometer",
+      "name": "Imaging Spectrometer",
+      "shortName": "Spectrometer",
+      "category": "science",
+      "tl": 7.6,
+      "year": 1977,
+      "massKg": 15,
+      "costMusd": 5.0,
+      "powerWatts": 20,
+      "range": "planetary",
+      "notes": "Multi-wavelength surface composition mapping. Basis: Voyager, Galileo."
+    },
+    {
+      "id": "sensor-telescope",
+      "name": "Space Telescope",
+      "shortName": "Telescope",
+      "category": "science",
+      "tl": 8.0,
+      "year": 1990,
+      "massKg": 150,
+      "costMusd": 50.0,
+      "powerWatts": 200,
+      "range": "deep_space",
+      "notes": "High-resolution optical/IR astronomy. Basis: Hubble Space Telescope."
+    },
+    {
+      "id": "sensor-radar-sar",
+      "name": "Synthetic Aperture Radar",
+      "shortName": "SAR",
+      "category": "science",
+      "tl": 7.8,
+      "year": 1978,
+      "massKg": 250,
+      "costMusd": 30.0,
+      "powerWatts": 500,
+      "range": "planetary",
+      "notes": "All-weather surface imaging through clouds. Basis: Seasat, Magellan."
+    },
+    {
+      "id": "sensor-comm-dish",
+      "name": "High-Gain Communication Dish",
+      "shortName": "Comm Dish",
+      "category": "communication",
+      "tl": 7.4,
+      "year": 1969,
+      "massKg": 35,
+      "costMusd": 3.0,
+      "powerWatts": 50,
+      "range": "deep_space",
+      "notes": "Parabolic dish for long-range telemetry. Basis: Apollo CSM, Voyager."
+    },
+    {
+      "id": "sensor-optical-comms",
+      "name": "Optical Communication Terminal",
+      "shortName": "Optical Comm",
+      "category": "communication",
+      "tl": 8.5,
+      "year": 2025,
+      "massKg": 18,
+      "costMusd": 8.0,
+      "powerWatts": 80,
+      "range": "deep_space",
+      "notes": "Laser-based high-bandwidth communication. Basis: NASA LCRD, Artemis comms."
+    }
+  ]
+}

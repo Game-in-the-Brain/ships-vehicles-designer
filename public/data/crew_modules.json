@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "schema_version": "0.1",
+    "description": "Mneme Ship Design System — Crew Module Catalog. Crew modules are Level-2 components that provide habitable space for crew members.",
+    "units": {
+      "mass": "kg",
+      "cost": "millions USD",
+      "volume": "cubic meters"
+    }
+  },
+  "crew_modules": [
+    {
+      "id": "crew-single-capsule",
+      "name": "Single-Seat Capsule",
+      "shortName": "1-Seat Capsule",
+      "tl": 7.0,
+      "year": 1959,
+      "seats": 1,
+      "massKg": 350,
+      "costMusd": 5.0,
+      "volumeM3": 2.5,
+      "missionDurationDays": 3,
+      "notes": "Minimal capsule for short missions. Basis: Mercury capsule."
+    },
+    {
+      "id": "crew-dual-capsule",
+      "name": "Dual-Seat Capsule",
+      "shortName": "2-Seat Capsule",
+      "tl": 7.2,
+      "year": 1965,
+      "seats": 2,
+      "massKg": 550,
+      "costMusd": 8.0,
+      "volumeM3": 4.0,
+      "missionDurationDays": 14,
+      "notes": "Two-person capsule with basic life support. Basis: Gemini, Voskhod."
+    },
+    {
+      "id": "crew-triple-capsule",
+      "name": "Triple-Seat Capsule",
+      "shortName": "3-Seat Capsule",
+      "tl": 7.4,
+      "year": 1967,
+      "seats": 3,
+      "massKg": 850,
+      "costMusd": 12.0,
+      "volumeM3": 6.5,
+      "missionDurationDays": 14,
+      "notes": "Three-person command module. Basis: Apollo CM, Soyuz descent module."
+    },
+    {
+      "id": "crew-seven-capsule",
+      "name": "Seven-Seat Crew Capsule",
+      "shortName": "7-Seat Capsule",
+      "tl": 8.4,
+      "year": 2020,
+      "seats": 7,
+      "massKg": 4200,
+      "costMusd": 25.0,
+      "volumeM3": 9.3,
+      "missionDurationDays": 7,
+      "notes": "Commercial crew capsule with touchscreen controls. Basis: Crew Dragon, Starliner."
+    },
+    {
+      "id": "crew-shuttle-cabin",
+      "name": "Shuttle Crew Cabin",
+      "shortName": "Shuttle Cabin",
+      "tl": 7.8,
+      "year": 1981,
+      "seats": 7,
+      "massKg": 8500,
+      "costMusd": 45.0,
+      "volumeM3": 71.5,
+      "missionDurationDays": 30,
+      "notes": "Flight deck + middeck with airlock. Basis: Space Shuttle orbiter crew compartment."
+    },
+    {
+      "id": "crew-small-hab",
+      "name": "Small Habitat Module",
+      "shortName": "Small Hab",
+      "tl": 8.0,
+      "year": 1998,
+      "seats": 4,
+      "massKg": 12000,
+      "costMusd": 60.0,
+      "volumeM3": 40,
+      "missionDurationDays": 180,
+      "notes": "Long-duration habitat with exercise equipment. Basis: ISS Zvezda, Zarya."
+    },
+    {
+      "id": "crew-large-hab",
+      "name": "Large Habitat Module",
+      "shortName": "Large Hab",
+      "tl": 8.2,
+      "year": 2001,
+      "seats": 6,
+      "massKg": 18000,
+      "costMusd": 80.0,
+      "volumeM3": 75,
+      "missionDurationDays": 365,
+      "notes": "Research laboratory with glovebox and external payload mounts. Basis: ISS Destiny, Columbus."
+    },
+    {
+      "id": "crew-commercial",
+      "name": "Commercial Passenger Cabin",
+      "shortName": "Passenger Cabin",
+      "tl": 8.6,
+      "year": 2030,
+      "seats": 50,
+      "massKg": 45000,
+      "costMusd": 120.0,
+      "volumeM3": 300,
+      "missionDurationDays": 90,
+      "notes": "High-capacity passenger module for commercial spaceflight. Basis: Starship (conceptual), orbital hotels."
+    }
+  ]
+}

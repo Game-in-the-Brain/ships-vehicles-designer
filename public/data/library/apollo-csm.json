@@ -1,0 +1,251 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "NASA NTRS, Apollo CSM Specifications",
+    "calibration": true
+  },
+  "vehicle": {
+    "id": "apollo-csm",
+    "name": "Apollo Command/Service Module",
+    "type": "Orb",
+    "tl": 7.4,
+    "pmr": 10,
+    "structures": [
+      {
+        "id": "csm-service",
+        "name": "Service Module",
+        "massTons": 5.2,
+        "cost": 35,
+        "capacityTons": 25.5,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "csm-s-engine",
+            "type": "engine",
+            "name": "Service Propulsion Engine ×1",
+            "massKg": 300,
+            "costMusd": 4.5,
+            "engineAssembly": {
+              "id": "csm-s-engine-assembly",
+              "name": "Aerojet AJ10-137 SPS",
+              "powerPlantId": "hyg-1",
+              "driveId": "fixed-bell-2",
+              "count": 1,
+              "vacuumIsp": 314,
+              "seaLevelIsp": null,
+              "totalThrustKn": 91.2,
+              "dryMassKg": 300,
+              "costMusd": 4.5,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "csm-s-fuel",
+            "type": "fuel_tank",
+            "name": "Aerozine-50/N2O4 Service Tank",
+            "massKg": 18700,
+            "costMusd": 18.7,
+            "fuelTank": {
+              "id": "csm-s-fuel-tank",
+              "name": "Aerozine-50/N2O4 Service Tank",
+              "fuelType": "Aerozine-50/N2O4",
+              "propellantMassKg": 18500,
+              "tankMassKg": 200,
+              "ullageFraction": 0.02,
+              "totalMassKg": 18700
+            }
+          },
+          {
+            "id": "csm-s-rcs",
+            "type": "engine",
+            "name": "RCS Thruster Quad ×4",
+            "massKg": 280,
+            "costMusd": 3.2,
+            "engineAssembly": {
+              "id": "csm-s-rcs-assembly",
+              "name": "RCS Quad ×4",
+              "powerPlantId": "hyg-1",
+              "driveId": "gimbaled-1",
+              "count": 4,
+              "vacuumIsp": 290,
+              "seaLevelIsp": null,
+              "totalThrustKn": 4.0,
+              "dryMassKg": 280,
+              "costMusd": 3.2,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "csm-s-fuel-cell",
+            "type": "sensor",
+            "name": "Fuel Cell Power System",
+            "massKg": 250,
+            "costMusd": 5.0,
+            "sensor": {
+              "id": "sensor-fuel-cell",
+              "name": "Fuel Cell Power System",
+              "shortName": "Fuel Cell",
+              "category": "communication",
+              "tl": 7.4,
+              "year": 1967,
+              "massKg": 250,
+              "costMusd": 5.0,
+              "powerWatts": 2300,
+              "range": "deep_space",
+              "notes": "H2/O2 fuel cells generating 1.4 kW continuous. Basis: Apollo SM fuel cells."
+            }
+          },
+          {
+            "id": "csm-s-high-gain",
+            "type": "sensor",
+            "name": "High-Gain Communication Dish",
+            "massKg": 35,
+            "costMusd": 3.0,
+            "sensor": {
+              "id": "sensor-comm-dish",
+              "name": "High-Gain Communication Dish",
+              "shortName": "Comm Dish",
+              "category": "communication",
+              "tl": 7.4,
+              "year": 1969,
+              "massKg": 35,
+              "costMusd": 3.0,
+              "powerWatts": 50,
+              "range": "deep_space",
+              "notes": "S-band parabolic dish for long-range telemetry and voice. Basis: Apollo CSM."
+            }
+          }
+        ],
+        "attachedMassTons": 19.565,
+        "attachedCost": 34.4,
+        "totalMassTons": 24.765,
+        "totalCost": 69.4,
+        "overCapacity": false,
+        "capacityUsedPercent": 76.7
+      },
+      {
+        "id": "csm-command",
+        "name": "Command Module",
+        "massTons": 1.6,
+        "cost": 55,
+        "capacityTons": 6.0,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "csm-c-crew",
+            "type": "crew_module",
+            "name": "Triple-Seat Capsule",
+            "massKg": 850,
+            "costMusd": 12.0,
+            "crewModule": {
+              "id": "crew-triple-capsule",
+              "name": "Triple-Seat Capsule",
+              "shortName": "3-Seat Capsule",
+              "tl": 7.4,
+              "year": 1967,
+              "seats": 3,
+              "massKg": 850,
+              "costMusd": 12.0,
+              "volumeM3": 6.5,
+              "missionDurationDays": 14,
+              "notes": "Three-person command module with couch seats and instrument panels. Basis: Apollo CM."
+            }
+          },
+          {
+            "id": "csm-c-bridge",
+            "type": "bridge",
+            "name": "Command Deck (3-Station)",
+            "massKg": 450,
+            "costMusd": 2.5,
+            "bridgeType": {
+              "id": "bridge-command-3",
+              "name": "Command Deck (3-Station)",
+              "shortName": "3-Station Deck",
+              "tl": 7.4,
+              "year": 1967,
+              "stations": 3,
+              "massKg": 450,
+              "costMusd": 2.5,
+              "minCrew": 2,
+              "maxCrew": 3,
+              "notes": "Dedicated commander, pilot, and systems stations with flight instruments. Basis: Apollo CM."
+            }
+          },
+          {
+            "id": "csm-c-heat-shield",
+            "type": "recovery",
+            "name": "Ablative Heat Shield",
+            "massKg": 400,
+            "costMusd": 8.0
+          },
+          {
+            "id": "csm-c-parachutes",
+            "type": "recovery",
+            "name": "Drogue + Main Parachutes",
+            "massKg": 150,
+            "costMusd": 4.0
+          },
+          {
+            "id": "csm-c-gnc",
+            "type": "avionics",
+            "name": "Apollo Guidance Computer",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-74",
+              "category": "guidance",
+              "name": "Apollo Guidance Computer",
+              "shortName": "AGC",
+              "tl": 7.4,
+              "yearRange": "1965–1969",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 55,
+              "reliability": 0.95,
+              "capabilities": ["guidance", "navigation", "control", "rendezvous"],
+              "redundancy": "dual",
+              "computingMips": 0.04,
+              "notes": "First silicon IC-based space computer. Core rope memory. Basis: Apollo AGC Block II."
+            }
+          },
+          {
+            "id": "csm-c-star-tracker",
+            "type": "sensor",
+            "name": "Star Tracker",
+            "massKg": 8,
+            "costMusd": 1.0,
+            "sensor": {
+              "id": "sensor-star-tracker",
+              "name": "Star Tracker",
+              "shortName": "Star Tracker",
+              "category": "navigation",
+              "tl": 7.4,
+              "year": 1972,
+              "massKg": 8,
+              "costMusd": 1.0,
+              "powerWatts": 5,
+              "range": "deep_space",
+              "notes": "Automatic star pattern recognition for attitude determination. Basis: Apollo CSM."
+            }
+          }
+        ],
+        "attachedMassTons": 1.89,
+        "attachedCost": 31.0,
+        "totalMassTons": 3.49,
+        "totalCost": 86.0,
+        "overCapacity": false,
+        "capacityUsedPercent": 31.5
+      }
+    ],
+    "totalMassTons": 28.255,
+    "totalCost": 155.4,
+    "totalDeltaV": 2800,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "1966-02-26T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "Apollo Command/Service Module. Crew of 3 for lunar and Earth orbit missions. Service Module provides propulsion, power, and consumables; Command Module returns crew to Earth. 15 crewed flights including 9 lunar missions. Basis for all Apollo crewed operations."
+  }
+}

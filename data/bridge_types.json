@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "schema_version": "0.1",
+    "description": "Mneme Ship Design System — Bridge/Cockpit Catalog. Bridges are Level-2 components that provide command and control stations.",
+    "units": {
+      "mass": "kg",
+      "cost": "millions USD"
+    }
+  },
+  "bridge_types": [
+    {
+      "id": "bridge-single",
+      "name": "Single-Seat Cockpit",
+      "shortName": "1-Seat Cockpit",
+      "tl": 7.0,
+      "year": 1959,
+      "stations": 1,
+      "massKg": 150,
+      "costMusd": 0.5,
+      "minCrew": 1,
+      "maxCrew": 1,
+      "notes": "Minimal instruments, mechanical gauges. Basis: Mercury capsule."
+    },
+    {
+      "id": "bridge-dual",
+      "name": "Dual-Seat Cockpit",
+      "shortName": "2-Seat Cockpit",
+      "tl": 7.2,
+      "year": 1965,
+      "stations": 2,
+      "massKg": 250,
+      "costMusd": 1.0,
+      "minCrew": 1,
+      "maxCrew": 2,
+      "notes": "Basic electroluminescent displays. Basis: Gemini, Voskhod."
+    },
+    {
+      "id": "bridge-command-3",
+      "name": "Command Deck (3-Station)",
+      "shortName": "3-Station Deck",
+      "tl": 7.4,
+      "year": 1967,
+      "stations": 3,
+      "massKg": 450,
+      "costMusd": 2.5,
+      "minCrew": 2,
+      "maxCrew": 3,
+      "notes": "Dedicated commander, pilot, and systems stations. Basis: Apollo CM."
+    },
+    {
+      "id": "bridge-flight-4",
+      "name": "Flight Deck (4-Station)",
+      "shortName": "4-Station Deck",
+      "tl": 7.8,
+      "year": 1981,
+      "stations": 4,
+      "massKg": 800,
+      "costMusd": 5.0,
+      "minCrew": 2,
+      "maxCrew": 4,
+      "notes": "First glass cockpit with CRT displays. Overhead panel for systems. Basis: Space Shuttle flight deck."
+    },
+    {
+      "id": "bridge-modular",
+      "name": "Modular Bridge",
+      "shortName": "Modular Bridge",
+      "tl": 8.0,
+      "year": 1998,
+      "stations": 4,
+      "massKg": 600,
+      "costMusd": 3.0,
+      "minCrew": 2,
+      "maxCrew": 6,
+      "notes": "Reconfigurable LCD displays. Swappable control layouts. Basis: ISS Cupola + control stations."
+    },
+    {
+      "id": "bridge-touchscreen",
+      "name": "Touchscreen Bridge",
+      "shortName": "Touch Bridge",
+      "tl": 8.4,
+      "year": 2020,
+      "stations": 3,
+      "massKg": 400,
+      "costMusd": 4.0,
+      "minCrew": 1,
+      "maxCrew": 4,
+      "notes": "Large touchscreens with customizable layouts. Minimal physical buttons. Basis: Crew Dragon displays."
+    },
+    {
+      "id": "bridge-holographic",
+      "name": "Holographic Bridge",
+      "shortName": "Holo Bridge",
+      "tl": 8.8,
+      "year": 2042,
+      "stations": 4,
+      "massKg": 500,
+      "costMusd": 8.0,
+      "minCrew": 2,
+      "maxCrew": 5,
+      "notes": "Volumetric displays for 3D situational awareness. Eye-tracking control. Conceptual."
+    }
+  ]
+}

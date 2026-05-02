@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "NASA NTRS, Apollo Lunar Module Specifications",
+    "calibration": true
+  },
+  "vehicle": {
+    "id": "apollo-lm",
+    "name": "Apollo Lunar Module",
+    "type": "LEV",
+    "tl": 7.4,
+    "pmr": 10,
+    "structures": [
+      {
+        "id": "lm-descent",
+        "name": "Descent Stage",
+        "massTons": 2.2,
+        "cost": 35,
+        "capacityTons": 10.5,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "lm-d-engine",
+            "type": "engine",
+            "name": "Descent Engine ×1",
+            "massKg": 180,
+            "costMusd": 2.5,
+            "engineAssembly": {
+              "id": "lm-d-engine-assembly",
+              "name": "Descent Propulsion System",
+              "powerPlantId": "hyg-1",
+              "driveId": "gimbaled-1",
+              "count": 1,
+              "vacuumIsp": 311,
+              "seaLevelIsp": null,
+              "totalThrustKn": 45.0,
+              "dryMassKg": 180,
+              "costMusd": 2.5,
+              "throttleRange": [0.10, 0.60]
+            }
+          },
+          {
+            "id": "lm-d-fuel",
+            "type": "fuel_tank",
+            "name": "Aerozine-50/N2O4 Descent Tank",
+            "massKg": 8260,
+            "costMusd": 8.2,
+            "fuelTank": {
+              "id": "lm-d-fuel-tank",
+              "name": "Aerozine-50/N2O4 Descent Tank",
+              "fuelType": "Aerozine-50/N2O4",
+              "propellantMassKg": 8200,
+              "tankMassKg": 60,
+              "ullageFraction": 0.02,
+              "totalMassKg": 8260
+            }
+          },
+          {
+            "id": "lm-d-landing-radar",
+            "type": "sensor",
+            "name": "Landing Radar",
+            "massKg": 20,
+            "costMusd": 1.5,
+            "sensor": {
+              "id": "sensor-radar-alt",
+              "name": "Landing Radar",
+              "shortName": "Landing Radar",
+              "category": "landing",
+              "tl": 7.4,
+              "year": 1969,
+              "massKg": 20,
+              "costMusd": 1.5,
+              "powerWatts": 150,
+              "range": "surface",
+              "notes": "Doppler radar for altitude and velocity during final descent. Basis: Apollo LM PGNS."
+            }
+          },
+          {
+            "id": "lm-d-legs",
+            "type": "recovery",
+            "name": "Landing Gear ×4",
+            "massKg": 290,
+            "costMusd": 3.0
+          }
+        ],
+        "attachedMassTons": 8.75,
+        "attachedCost": 15.2,
+        "totalMassTons": 10.95,
+        "totalCost": 50.2,
+        "overCapacity": false,
+        "capacityUsedPercent": 83.3
+      },
+      {
+        "id": "lm-ascent",
+        "name": "Ascent Stage",
+        "massTons": 1.1,
+        "cost": 25,
+        "capacityTons": 4.8,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "lm-a-engine",
+            "type": "engine",
+            "name": "Ascent Engine ×1",
+            "massKg": 90,
+            "costMusd": 1.5,
+            "engineAssembly": {
+              "id": "lm-a-engine-assembly",
+              "name": "Ascent Propulsion System",
+              "powerPlantId": "hyg-1",
+              "driveId": "fixed-bell-1",
+              "count": 1,
+              "vacuumIsp": 311,
+              "seaLevelIsp": null,
+              "totalThrustKn": 15.6,
+              "dryMassKg": 90,
+              "costMusd": 1.5,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "lm-a-fuel",
+            "type": "fuel_tank",
+            "name": "Aerozine-50/N2O4 Ascent Tank",
+            "massKg": 2400,
+            "costMusd": 2.4,
+            "fuelTank": {
+              "id": "lm-a-fuel-tank",
+              "name": "Aerozine-50/N2O4 Ascent Tank",
+              "fuelType": "Aerozine-50/N2O4",
+              "propellantMassKg": 2353,
+              "tankMassKg": 47,
+              "ullageFraction": 0.02,
+              "totalMassKg": 2400
+            }
+          },
+          {
+            "id": "lm-a-crew",
+            "type": "crew_module",
+            "name": "Dual-Seat Capsule",
+            "massKg": 550,
+            "costMusd": 8.0,
+            "crewModule": {
+              "id": "crew-dual-capsule",
+              "name": "Dual-Seat Capsule",
+              "shortName": "2-Seat Capsule",
+              "tl": 7.2,
+              "year": 1965,
+              "seats": 2,
+              "massKg": 550,
+              "costMusd": 8.0,
+              "volumeM3": 4.0,
+              "missionDurationDays": 3,
+              "notes": "Cramped cabin for lunar surface operations. Basis: Apollo LM ascent module."
+            }
+          },
+          {
+            "id": "lm-a-bridge",
+            "type": "bridge",
+            "name": "Dual-Seat Cockpit",
+            "massKg": 250,
+            "costMusd": 1.0,
+            "bridgeType": {
+              "id": "bridge-dual",
+              "name": "Dual-Seat Cockpit",
+              "shortName": "2-Seat Cockpit",
+              "tl": 7.2,
+              "year": 1965,
+              "stations": 2,
+              "massKg": 250,
+              "costMusd": 1.0,
+              "minCrew": 1,
+              "maxCrew": 2,
+              "notes": "Commander and pilot stations with mechanical gauges. Basis: Apollo LM."
+            }
+          },
+          {
+            "id": "lm-a-avionics",
+            "type": "avionics",
+            "name": "Analog Guidance System",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Analog Guidance System",
+              "shortName": "Analog GNC",
+              "tl": 7.2,
+              "yearRange": "1965–1969",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.91,
+              "capabilities": ["guidance", "navigation", "control"],
+              "redundancy": "dual",
+              "computingMips": 0.1,
+              "notes": "Discrete-logic guidance with DSKY interface. Basis: Apollo LM AGC."
+            }
+          }
+        ],
+        "attachedMassTons": 3.312,
+        "attachedCost": 16.4,
+        "totalMassTons": 4.412,
+        "totalCost": 41.4,
+        "overCapacity": false,
+        "capacityUsedPercent": 69.0
+      }
+    ],
+    "totalMassTons": 15.362,
+    "totalCost": 91.6,
+    "totalDeltaV": 4720,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "1969-07-20T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "Apollo Lunar Module. First crewed vehicle to land on the Moon (Apollo 11, 1969). Two-stage design: descent stage remains on surface; ascent stage returns crew to lunar orbit. 6 successful landings."
+  }
+}

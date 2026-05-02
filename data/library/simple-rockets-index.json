@@ -1,0 +1,778 @@
+{
+  "_meta": {
+    "format": "simple-rockets-index",
+    "version": "0.1",
+    "scrapedAt": "2026-05-02T14:47:25.420Z",
+    "count": 30
+  },
+  "crafts": [
+    {
+      "id": "cEexA4",
+      "name": "R-7 Semiorka",
+      "era": "1957",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/cEexA4",
+      "importLink": "simplerockets2://craft/cEexA4",
+      "specs": {
+        "parts": "376",
+        "price": "$13,439k",
+        "dimensions": {
+          "length": 34,
+          "width": 11,
+          "height": 11
+        },
+        "deltaV": 4800,
+        "thrust": 4800,
+        "engines": "20",
+        "wetMass": 250999.99999999997,
+        "dryMass": 35049,
+        "gameVersion": "0.9.614.0",
+        "createdOn": "Android"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "3J51VN",
+      "name": "Juno I",
+      "era": "1958",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/3J51VN",
+      "importLink": "simplerockets2://craft/3J51VN",
+      "specs": {
+        "parts": "78",
+        "price": "$1,965k",
+        "dimensions": {
+          "length": 21,
+          "width": 3,
+          "height": 3
+        },
+        "deltaV": 7800,
+        "thrust": null,
+        "engines": "16",
+        "wetMass": 18961,
+        "dryMass": 3890,
+        "gameVersion": "1.2.109.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "1SR3e8",
+      "name": "Vostok 1",
+      "era": "1961",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/1SR3e8",
+      "importLink": "simplerockets2://craft/1SR3e8",
+      "specs": {
+        "parts": "224",
+        "price": "$33,965k",
+        "dimensions": {
+          "length": 44,
+          "width": 15,
+          "height": 15
+        },
+        "deltaV": 5500,
+        "thrust": 10400,
+        "engines": "28",
+        "wetMass": 661000,
+        "dryMass": 61250,
+        "gameVersion": "0.9.204.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "O34J4D",
+      "name": "Atlas LV-3B",
+      "era": "1962",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/O34J4D",
+      "importLink": "simplerockets2://craft/O34J4D",
+      "specs": {
+        "parts": "749",
+        "price": "$16,636k",
+        "dimensions": {
+          "length": 35,
+          "width": 5,
+          "height": 4
+        },
+        "deltaV": 9000,
+        "thrust": 4000,
+        "engines": "21",
+        "wetMass": 125000,
+        "dryMass": null,
+        "gameVersion": "0.9.802.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "8ikkK9",
+      "name": "Titan II GLV",
+      "era": "1964",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/8ikkK9",
+      "importLink": "simplerockets2://craft/8ikkK9",
+      "specs": {
+        "parts": "167",
+        "price": "$50,768k",
+        "dimensions": {
+          "length": 33,
+          "width": 3,
+          "height": 3
+        },
+        "deltaV": 8100,
+        "thrust": 2600,
+        "engines": "6",
+        "wetMass": 99553,
+        "dryMass": 17858,
+        "gameVersion": "1.2.109.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "ZUf7C7",
+      "name": "Soyuz",
+      "era": "1966",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/ZUf7C7",
+      "importLink": "simplerockets2://craft/ZUf7C7",
+      "specs": {
+        "parts": "257",
+        "price": "$25,618k",
+        "dimensions": {
+          "length": 42,
+          "width": 10,
+          "height": 10
+        },
+        "deltaV": 6900,
+        "thrust": 4400,
+        "engines": "46",
+        "wetMass": 244000,
+        "dryMass": 32055,
+        "gameVersion": "0.6.5.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "38Kfg0",
+      "name": "Saturn IB",
+      "era": "1966",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/38Kfg0",
+      "importLink": "simplerockets2://craft/38Kfg0",
+      "specs": {
+        "parts": "201",
+        "price": "$38,886k",
+        "dimensions": {
+          "length": 67,
+          "width": 10,
+          "height": 10
+        },
+        "deltaV": 7900,
+        "thrust": 22000,
+        "engines": "20",
+        "wetMass": 550000,
+        "dryMass": 74886,
+        "gameVersion": "0.9.704.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "1KW3z2",
+      "name": "Saturn V",
+      "era": "1967",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/1KW3z2",
+      "importLink": "simplerockets2://craft/1KW3z2",
+      "specs": {
+        "parts": "6330",
+        "price": "$369,813k",
+        "dimensions": {
+          "length": 148,
+          "width": 957,
+          "height": 957
+        },
+        "deltaV": 66000,
+        "thrust": 63000,
+        "engines": "41",
+        "wetMass": 13000000,
+        "dryMass": null,
+        "gameVersion": "0.9.704.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "d1Vaq5",
+      "name": "Space Shuttle",
+      "era": "1981",
+      "origin": "USA",
+      "type": "Orb",
+      "url": "https://www.simplerockets.com/c/d1Vaq5",
+      "importLink": "simplerockets2://craft/d1Vaq5",
+      "specs": {
+        "parts": null,
+        "price": null,
+        "dimensions": null,
+        "deltaV": null,
+        "thrust": null,
+        "engines": null,
+        "wetMass": null,
+        "dryMass": null,
+        "gameVersion": null,
+        "createdOn": null
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "jt8106",
+      "name": "Proton-M",
+      "era": "2001",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/jt8106",
+      "importLink": "simplerockets2://craft/jt8106",
+      "specs": {
+        "parts": "268",
+        "price": "$146,962k",
+        "dimensions": {
+          "length": 60,
+          "width": 7,
+          "height": 7
+        },
+        "deltaV": 10900,
+        "thrust": 14400,
+        "engines": "38",
+        "wetMass": 711000,
+        "dryMass": 337000,
+        "gameVersion": "1.3.204.1",
+        "createdOn": "Android"
+      },
+      "chemistry": "hypergolic"
+    },
+    {
+      "id": "uF7uc3",
+      "name": "Ariane 5",
+      "era": "1996",
+      "origin": "EUR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/uF7uc3",
+      "importLink": "simplerockets2://craft/uF7uc3",
+      "specs": {
+        "parts": "382",
+        "price": "$30,938k",
+        "dimensions": {
+          "length": 56,
+          "width": 13,
+          "height": 6
+        },
+        "deltaV": 3100,
+        "thrust": 18500,
+        "engines": "22",
+        "wetMass": 754000,
+        "dryMass": 73376,
+        "gameVersion": "0.9.802.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "5hSzxN",
+      "name": "Falcon 9",
+      "era": "2010",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/5hSzxN",
+      "importLink": "simplerockets2://craft/5hSzxN",
+      "specs": {
+        "parts": "1828",
+        "price": "$147,304k",
+        "dimensions": null,
+        "deltaV": null,
+        "thrust": 9200,
+        "engines": "80",
+        "wetMass": 10200000,
+        "dryMass": 9020000,
+        "gameVersion": "1.2.109.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "9VK79N",
+      "name": "Falcon Heavy",
+      "era": "2018",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/9VK79N",
+      "importLink": "simplerockets2://craft/9VK79N",
+      "specs": {
+        "parts": "477",
+        "price": "$111,812k",
+        "dimensions": {
+          "length": 91,
+          "width": 14,
+          "height": 26
+        },
+        "deltaV": 66700,
+        "thrust": 25600,
+        "engines": "28",
+        "wetMass": 1420000,
+        "dryMass": null,
+        "gameVersion": "0.9.801.0",
+        "createdOn": "Android"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "tdjwOs",
+      "name": "SLS",
+      "era": "2022",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/tdjwOs",
+      "importLink": "simplerockets2://craft/tdjwOs",
+      "specs": {
+        "parts": "4676",
+        "price": "$229,806k",
+        "dimensions": {
+          "length": 120,
+          "width": 41,
+          "height": 49
+        },
+        "deltaV": 7200,
+        "thrust": 43300,
+        "engines": "109",
+        "wetMass": 9110000,
+        "dryMass": 6740000,
+        "gameVersion": "1.3.204.1",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "mok9JB",
+      "name": "Vulcan Centaur",
+      "era": "2024",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/mok9JB",
+      "importLink": "simplerockets2://craft/mok9JB",
+      "specs": {
+        "parts": "3718",
+        "price": "$55,106k",
+        "dimensions": {
+          "length": 62,
+          "width": 6,
+          "height": 19
+        },
+        "deltaV": 51400,
+        "thrust": 10000,
+        "engines": "13",
+        "wetMass": 475000,
+        "dryMass": 49300,
+        "gameVersion": "1.2.210.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "8jSW0H",
+      "name": "Ariane 6",
+      "era": "2024",
+      "origin": "EUR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/8jSW0H",
+      "importLink": "simplerockets2://craft/8jSW0H",
+      "specs": {
+        "parts": "322",
+        "price": "$21,753k",
+        "dimensions": {
+          "length": 63,
+          "width": 13,
+          "height": 13
+        },
+        "deltaV": 5400,
+        "thrust": 13800,
+        "engines": "14",
+        "wetMass": 656000,
+        "dryMass": 77494,
+        "gameVersion": "0.8.402.0",
+        "createdOn": "Mac"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "LV1JV6",
+      "name": "Starship",
+      "era": "2023",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/LV1JV6",
+      "importLink": "simplerockets2://craft/LV1JV6",
+      "specs": {
+        "parts": "1335",
+        "price": "$1,324,573k",
+        "dimensions": {
+          "length": 148,
+          "width": 87,
+          "height": 98
+        },
+        "deltaV": 1600,
+        "thrust": 94800,
+        "engines": "41",
+        "wetMass": 15500000,
+        "dryMass": 11399999.999999998,
+        "gameVersion": "1.3.204.1",
+        "createdOn": "Windows"
+      },
+      "chemistry": "methalox"
+    },
+    {
+      "id": "05Rxn9",
+      "name": "Buran (OK-1.01)",
+      "era": "1988",
+      "origin": "USSR",
+      "type": "Orb",
+      "url": "https://www.simplerockets.com/c/05Rxn9",
+      "importLink": "simplerockets2://craft/05Rxn9",
+      "specs": {
+        "parts": "392",
+        "price": "$149,534k",
+        "dimensions": {
+          "length": 57,
+          "width": 21,
+          "height": 19
+        },
+        "deltaV": 4800,
+        "thrust": 40300,
+        "engines": "26",
+        "wetMass": 1860000,
+        "dryMass": 247000.00000000003,
+        "gameVersion": "0.8.402.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "B43Rb0",
+      "name": "Energia-Buran (RSS)",
+      "era": "1988",
+      "origin": "USSR",
+      "type": "Orb",
+      "url": "https://www.simplerockets.com/c/B43Rb0",
+      "importLink": "simplerockets2://craft/B43Rb0",
+      "specs": {
+        "parts": "309",
+        "price": "$626,181k",
+        "dimensions": {
+          "length": 52,
+          "width": 28,
+          "height": 23
+        },
+        "deltaV": 33000,
+        "thrust": 16700,
+        "engines": "25",
+        "wetMass": 1390000,
+        "dryMass": 566000,
+        "gameVersion": "1.3.204.1",
+        "createdOn": "Android"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "x7Wjzl",
+      "name": "Energia LV",
+      "era": "1987",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/x7Wjzl",
+      "importLink": "simplerockets2://craft/x7Wjzl",
+      "specs": {
+        "parts": "882",
+        "price": "$212,845k",
+        "dimensions": {
+          "length": 60,
+          "width": 10,
+          "height": 18
+        },
+        "deltaV": 5800,
+        "thrust": 70600,
+        "engines": "28",
+        "wetMass": 1710000,
+        "dryMass": null,
+        "gameVersion": "0.9.306.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "P02B94",
+      "name": "Energia-Buran Rocket",
+      "era": "1988",
+      "origin": "USSR",
+      "type": "Orb",
+      "url": "https://www.simplerockets.com/c/P02B94",
+      "importLink": "simplerockets2://craft/P02B94",
+      "specs": {
+        "parts": "1725",
+        "price": "$177,335k",
+        "dimensions": {
+          "length": 93,
+          "width": 41,
+          "height": 105
+        },
+        "deltaV": 3500,
+        "thrust": 47600,
+        "engines": "28",
+        "wetMass": 3920000,
+        "dryMass": 1120000,
+        "gameVersion": "0.7.0.5",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "rivhRX",
+      "name": "Baran Space Shuttle",
+      "era": "1988",
+      "origin": "USSR",
+      "type": "Orb",
+      "url": "https://www.simplerockets.com/c/rivhRX",
+      "importLink": "simplerockets2://craft/rivhRX",
+      "specs": {
+        "parts": "227",
+        "price": "$351,781k",
+        "dimensions": {
+          "length": 62,
+          "width": 16,
+          "height": 16
+        },
+        "deltaV": 14400,
+        "thrust": 66600,
+        "engines": "26",
+        "wetMass": 2390000,
+        "dryMass": null,
+        "gameVersion": "0.9.507.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "RtWq97",
+      "name": "Energia II (Uragan)",
+      "era": "1995",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/RtWq97",
+      "importLink": "simplerockets2://craft/RtWq97",
+      "specs": {
+        "parts": "1481",
+        "price": "$308,244k",
+        "dimensions": {
+          "length": 129,
+          "width": 307,
+          "height": 238
+        },
+        "deltaV": null,
+        "thrust": 79300,
+        "engines": "38",
+        "wetMass": 49000000,
+        "dryMass": null,
+        "gameVersion": "0.9.404.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "tAJ5cF",
+      "name": "Sea Dragon",
+      "era": "1962",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/tAJ5cF",
+      "importLink": "simplerockets2://craft/tAJ5cF",
+      "specs": {
+        "parts": "2234",
+        "price": "$1,417,788k",
+        "dimensions": {
+          "length": 206,
+          "width": 46,
+          "height": 46
+        },
+        "deltaV": 47100,
+        "thrust": 142300,
+        "engines": "12",
+        "wetMass": 4440000,
+        "dryMass": null,
+        "gameVersion": "0.8.201.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "y5gk3c",
+      "name": "The Sea Dragon",
+      "era": "1962",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/y5gk3c",
+      "importLink": "simplerockets2://craft/y5gk3c",
+      "specs": {
+        "parts": "335",
+        "price": "$429,887k",
+        "dimensions": {
+          "length": 161,
+          "width": 32,
+          "height": 32
+        },
+        "deltaV": 6200,
+        "thrust": 455700,
+        "engines": "6",
+        "wetMass": 23500000,
+        "dryMass": 6730000,
+        "gameVersion": "0.9.999.99",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "Gcd2rb",
+      "name": "Sea Dragon I Super Heavy",
+      "era": "1962",
+      "origin": "USA",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/Gcd2rb",
+      "importLink": "simplerockets2://craft/Gcd2rb",
+      "specs": {
+        "parts": "359",
+        "price": "$578,183k",
+        "dimensions": {
+          "length": 179,
+          "width": 31,
+          "height": 31
+        },
+        "deltaV": 85400,
+        "thrust": null,
+        "engines": "32",
+        "wetMass": 24400000,
+        "dryMass": null,
+        "gameVersion": "0.9.704.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
+    },
+    {
+      "id": "IHYfx0",
+      "name": "Artemis Lunar Lander",
+      "era": "2025",
+      "origin": "USA",
+      "type": "LEV",
+      "url": "https://www.simplerockets.com/c/IHYfx0",
+      "importLink": "simplerockets2://craft/IHYfx0",
+      "specs": {
+        "parts": "256",
+        "price": "$100,607k",
+        "dimensions": {
+          "length": 5,
+          "width": 6,
+          "height": 6
+        },
+        "deltaV": 5000,
+        "thrust": null,
+        "engines": "1",
+        "wetMass": 29947,
+        "dryMass": 9280,
+        "gameVersion": "1.3.205.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "hydrolox"
+    },
+    {
+      "id": "OXWIPH",
+      "name": "Project Orion Nuclear Pulse",
+      "era": "1960",
+      "origin": "USA",
+      "type": "OTV",
+      "url": "https://www.simplerockets.com/c/OXWIPH",
+      "importLink": "simplerockets2://craft/OXWIPH",
+      "specs": {
+        "parts": "464",
+        "price": "$-1,966,731k",
+        "dimensions": {
+          "length": 69,
+          "width": 25,
+          "height": 25
+        },
+        "deltaV": 722900,
+        "thrust": 144000,
+        "engines": "144",
+        "wetMass": 2510000,
+        "dryMass": null,
+        "gameVersion": "0.9.305.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "nuclear"
+    },
+    {
+      "id": "42aU98",
+      "name": "Bussard Ramjet ISV",
+      "era": "2050",
+      "origin": "THEO",
+      "type": "Sail",
+      "url": "https://www.simplerockets.com/c/42aU98",
+      "importLink": "simplerockets2://craft/42aU98",
+      "specs": {
+        "parts": "534",
+        "price": "$187,133,791k",
+        "dimensions": null,
+        "deltaV": null,
+        "thrust": 126000,
+        "engines": "7",
+        "wetMass": 107000000,
+        "dryMass": 5600000,
+        "gameVersion": "1.0.6.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "nuclear"
+    },
+    {
+      "id": "y5U8ek",
+      "name": "Alcubierre-White Warp",
+      "era": "2100",
+      "origin": "THEO",
+      "type": "Sail",
+      "url": "https://www.simplerockets.com/c/y5U8ek",
+      "importLink": "simplerockets2://craft/y5U8ek",
+      "specs": {
+        "parts": "88",
+        "price": "$25,011k",
+        "dimensions": {
+          "length": 2,
+          "width": 2,
+          "height": 5
+        },
+        "deltaV": null,
+        "thrust": null,
+        "engines": "13",
+        "wetMass": 9734,
+        "dryMass": null,
+        "gameVersion": "0.8.402.0",
+        "createdOn": "iOS"
+      },
+      "chemistry": "electric"
+    }
+  ]
+}
