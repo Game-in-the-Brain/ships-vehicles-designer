@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useVehicleStore } from './store/vehicleStore';
+import { VERSION } from './version';
 import StructureBuilder from './components/StructureBuilder';
 import EngineeringPage from './components/EngineeringPage';
 import LibraryScreen from './components/LibraryScreen';
@@ -93,7 +94,12 @@ function App() {
         {currentScreen === 'library' && <LibraryScreen />}
         {currentScreen === 'compare' && <CompareScreen />}
         {currentScreen === 'settings' && (
-          <div className="min-h-screen flex items-center justify-center text-ms-ink-dim font-mono">Settings — coming in M5</div>
+          <div className="min-h-screen flex items-center justify-center text-ms-ink-dim font-mono">
+            <div className="text-center">
+              <p className="mb-2">Settings — coming in M5</p>
+              <p className="text-xs text-ms-ink-dim/60">v{VERSION}</p>
+            </div>
+          </div>
         )}
       </div>
     </div>
