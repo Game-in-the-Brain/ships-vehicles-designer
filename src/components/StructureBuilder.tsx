@@ -1,14 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
 import { fmtNum, fmtDeltaV, fmtMass, fmtCost } from '../utils/formatters';
 import MsPanel from './primitives/MsPanel';
 import MsNum from './primitives/MsNum';
 import ChemistryBadge from './ChemistryBadge';
-import { Rocket, Plus, Trash2, ChevronDown, ChevronUp } from 'lucide-react';
+import { Rocket, Plus, Trash2, ChevronDown, ChevronUp, Save, FolderOpen, Download, Upload, FileJson, X, AlertCircle } from 'lucide-react';
 import type { AttachedComponent, EngineAssembly, FuelTank } from '../types';
+import type { SavedVehicleRecord } from '../store/vehicleStore';
 
 export default function StructureBuilder() {
-  const { currentVehicle, updateStructure, addComponent, removeComponent } = useVehicleStore();
+  const {
+    currentVehicle, updateStructure, addComponent, removeComponent,
+    saveVehicle, saveVehicleAs, loadSavedVehicle, listSavedVehicles,
+    deleteSavedVehicle, exportVehicleToFile, importVehicleFromFile,
+  } = useVehicleStore();
   const [expandedStructure, setExpandedStructure] = useState<string | null>(null);
   const [showAddEngine, setShowAddEngine] = useState<string | null>(null);
   const [showAddFuel, setShowAddFuel] = useState<string | null>(null);
@@ -17,8 +22,72 @@ export default function StructureBuilder() {
   const [showAddAvionics, setShowAddAvionics] = useState<string | null>(null);
   const [showAddSensor, setShowAddSensor] = useState<string | null>(null);
 
+  const [showSaveAsModal, setShowSaveAsModal] = useState(false);
+  const [showLoadModal, setShowLoadModal] = useState(false);
+  const [saveAsName, setSaveAsName] = useState('');
+  const [savedVehicles, setSavedVehicles] = useState<SavedVehicleRecord[]>([]);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
   const { powerPlants, drives, crewModules, bridgeTypes, avionics, sensors } = useVehicleStore();
   if (!currentVehicle) return null;
+
+  const showError = (msg: string) => {
+    setErrorMsg(msg);
+    setTimeout(() => setErrorMsg(null), 4000);
+  };
+
+  const handleSave = () => {
+    if (!currentVehicle) return;
+    saveVehicle(currentVehicle);
+  };
+
+  const handleSaveAs = () => {
+    setSaveAsName(currentVehicle.name);
+    setShowSaveAsModal(true);
+  };
+
+  const confirmSaveAs = () => {
+    if (!saveAsName.trim()) return;
+    saveVehicleAs(saveAsName.trim());
+    setShowSaveAsModal(false);
+  };
+
+  const handleLoadOpen = () => {
+    setSavedVehicles(listSavedVehicles());
+    setShowLoadModal(true);
+  };
+
+  const handleLoad = (id: string) => {
+    loadSavedVehicle(id);
+    setShowLoadModal(false);
+  };
+
+  const handleDeleteSaved = (id: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    deleteSavedVehicle(id);
+    setSavedVehicles(listSavedVehicles());
+  };
+
+  const handleExport = () => {
+    if (!currentVehicle) return;
+    exportVehicleToFile(currentVehicle);
+  };
+
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      await importVehicleFromFile(file);
+    } catch (err: any) {
+      showError(err?.message || 'Failed to import vehicle');
+    }
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
 
   return (
     <div className="min-h-screen bg-ms-bg text-ms-ink font-mono">
@@ -33,6 +102,36 @@ export default function StructureBuilder() {
             <MsNum value={fmtNum(currentVehicle.totalMassTons, 1)} unit="t" size="sm" label="Mass" />
             <MsNum value={currentVehicle.totalDeltaV ? fmtNum(currentVehicle.totalDeltaV / 1000, 2) : '—'} unit="km/s" size="sm" label="ΔV" />
           </div>
+        </div>
+        <div className="max-w-5xl mx-auto px-4 pb-3 flex items-center gap-2 flex-wrap">
+          <button onClick={handleSave} title="Save" className="flex items-center gap-1 px-2 py-1 text-xs bg-ms-input border border-ms-hair hover:border-ms-cyan transition-colors">
+            <Save className="w-3 h-3" /> Save
+          </button>
+          <button onClick={handleSaveAs} title="Save As" className="flex items-center gap-1 px-2 py-1 text-xs bg-ms-input border border-ms-hair hover:border-ms-cyan transition-colors">
+            <FileJson className="w-3 h-3" /> Save As
+          </button>
+          <button onClick={handleLoadOpen} title="Load" className="flex items-center gap-1 px-2 py-1 text-xs bg-ms-input border border-ms-hair hover:border-ms-cyan transition-colors">
+            <FolderOpen className="w-3 h-3" /> Load
+          </button>
+          <button onClick={handleExport} title="Export JSON" className="flex items-center gap-1 px-2 py-1 text-xs bg-ms-input border border-ms-hair hover:border-ms-cyan transition-colors">
+            <Download className="w-3 h-3" /> Export
+          </button>
+          <button onClick={handleImportClick} title="Import JSON" className="flex items-center gap-1 px-2 py-1 text-xs bg-ms-input border border-ms-hair hover:border-ms-cyan transition-colors">
+            <Upload className="w-3 h-3" /> Import
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".json,application/json"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+          {errorMsg && (
+            <div className="flex items-center gap-1 text-xs text-ms-warn ml-auto">
+              <AlertCircle className="w-3 h-3" />
+              {errorMsg}
+            </div>
+          )}
         </div>
       </div>
 
@@ -106,6 +205,115 @@ export default function StructureBuilder() {
           );
         })}
       </div>
+
+      {/* Save As Modal */}
+      {showSaveAsModal && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setShowSaveAsModal(false)}
+        >
+          <div onClick={(e) => e.stopPropagation()} className="w-full max-w-sm bg-ms-elevated border border-ms-hair flex flex-col">
+            <div className="p-4 border-b border-ms-hair flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Save className="w-5 h-5 text-ms-cyan" />
+                <h2 className="text-sm font-display font-bold text-ms-ink">Save As</h2>
+              </div>
+              <button onClick={() => setShowSaveAsModal(false)} className="p-1 text-ms-ink-dim hover:text-ms-warn transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="p-4 space-y-3">
+              <label className="text-xs text-ms-ink-dim block">Vehicle Name</label>
+              <input
+                type="text"
+                value={saveAsName}
+                onChange={(e) => setSaveAsName(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter') confirmSaveAs(); }}
+                className="w-full px-3 py-2 bg-ms-bg border border-ms-hair text-ms-ink text-sm font-mono placeholder:text-ms-ink-dim focus:border-ms-cyan focus:outline-none"
+                autoFocus
+              />
+            </div>
+            <div className="p-4 border-t border-ms-hair flex justify-end gap-2">
+              <button
+                onClick={() => setShowSaveAsModal(false)}
+                className="px-4 py-2 bg-ms-elevated border border-ms-hair text-ms-ink-soft text-xs font-mono hover:border-ms-cyan transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmSaveAs}
+                disabled={!saveAsName.trim()}
+                className="px-4 py-2 bg-ms-cyan text-ms-bg text-xs font-mono font-semibold hover:bg-ms-cyan-dim transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Load Modal */}
+      {showLoadModal && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+          style={{ background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(4px)' }}
+          onClick={() => setShowLoadModal(false)}
+        >
+          <div onClick={(e) => e.stopPropagation()} className="w-full max-w-lg bg-ms-elevated border border-ms-hair max-h-[80vh] flex flex-col">
+            <div className="p-4 border-b border-ms-hair flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <FolderOpen className="w-5 h-5 text-ms-cyan" />
+                <h2 className="text-sm font-display font-bold text-ms-ink">Load Vehicle</h2>
+                <span className="text-[10px] text-ms-ink-dim font-mono">{savedVehicles.length} saved</span>
+              </div>
+              <button onClick={() => setShowLoadModal(false)} className="p-1 text-ms-ink-dim hover:text-ms-warn transition-colors">
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="flex-1 overflow-y-auto p-2">
+              {savedVehicles.length === 0 ? (
+                <div className="text-center py-8 text-ms-ink-dim text-sm">No saved vehicles found.</div>
+              ) : (
+                <div className="space-y-1">
+                  {savedVehicles.map((entry) => (
+                    <div
+                      key={entry.id}
+                      className="w-full p-3 text-left border bg-ms-bg border-ms-hair hover:border-ms-cyan transition-colors flex items-center justify-between group cursor-pointer"
+                      onClick={() => handleLoad(entry.id)}
+                    >
+                      <div>
+                        <div className="text-sm font-semibold text-ms-ink">{entry.name}</div>
+                        <div className="text-[10px] text-ms-ink-soft mt-0.5">
+                          {entry.vehicle.type} · TL {entry.vehicle.tl} · {entry.vehicle.structures.length} structures · {fmtNum(entry.vehicle.totalMassTons, 1)} t
+                        </div>
+                        <div className="text-[10px] text-ms-ink-dim">
+                          Saved {new Date(entry.savedAt).toLocaleString()}
+                        </div>
+                      </div>
+                      <button
+                        onClick={(e) => handleDeleteSaved(entry.id, e)}
+                        title="Delete"
+                        className="p-1.5 text-ms-ink-dim hover:text-ms-warn opacity-0 group-hover:opacity-100 transition-opacity"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="p-4 border-t border-ms-hair flex justify-end">
+              <button
+                onClick={() => setShowLoadModal(false)}
+                className="px-4 py-2 bg-ms-elevated border border-ms-hair text-ms-ink-soft text-xs font-mono hover:border-ms-cyan transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

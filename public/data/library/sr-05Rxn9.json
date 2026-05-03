@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:34.467Z",
+    "originalUrl": "https://www.simplerockets.com/c/05Rxn9",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 1860,
+      "referenceDeltaV": 4800
+    }
+  },
+  "vehicle": {
+    "id": "sr-05Rxn9",
+    "name": "Buran (OK-1.01) (SR)",
+    "type": "Orb",
+    "tl": 7.8,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "877240ac-290d-4786-8941-9557e27e6bf7",
+        "name": "Buran (OK-1.01) Structure",
+        "massTons": 172.9,
+        "cost": 2470.0000000000005,
+        "capacityTons": 1869.8700999999999,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "689cec4c-8804-495f-8e05-56b68e720904",
+            "type": "engine",
+            "name": "Engine ×0",
+            "massKg": 0,
+            "costMusd": 0,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-0",
+              "name": "Engine ×0",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 0,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 0,
+              "dryMassKg": 0,
+              "costMusd": 0,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "e01ca9d3-8b9a-4cad-ac54-cba06ddf3f05",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 1625904,
+            "costMusd": 12.904,
+            "fuelTank": {
+              "id": "0d27aac9-114a-469f-a5bf-facc3a641476",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 1613000,
+              "tankMassKg": 12904,
+              "ullageFraction": 0.03,
+              "totalMassKg": 1625904
+            }
+          },
+          {
+            "id": "e49df4ac-4a32-4130-81b2-ab600afe8194",
+            "type": "avionics",
+            "name": "Redundant Digital Flight System",
+            "massKg": 70,
+            "costMusd": 4.2,
+            "avionicsUnit": {
+              "id": "av-guidance-75",
+              "category": "guidance",
+              "name": "Redundant Digital Flight System",
+              "shortName": "Redundant Digital",
+              "tl": 7.8,
+              "yearRange": "1990–1994",
+              "massKg": 70,
+              "costMusd": 4.2,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 1625.974,
+        "attachedCost": 17.104,
+        "totalMassTons": 1798.874,
+        "totalCost": 2487.1040000000003,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 1798.874,
+    "totalCost": 2487.1040000000003,
+    "totalDeltaV": 4800,
+    "leoPayloadKg": 30000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.663Z",
+    "updatedAt": "2026-05-03T12:13:19.663Z",
+    "notes": "Converted from SimpleRockets craft 05Rxn9. Origin: USSR. URL: https://www.simplerockets.com/c/05Rxn9"
+  }
+}

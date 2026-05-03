@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
 import { fmtNum, fmtDeltaV, fmtMass } from '../utils/formatters';
-import { convertSimpleRocketsToMSDS } from '../calculations/simpleRocketsConverter';
-import type { SimpleRocketsCraft } from '../calculations/simpleRocketsConverter';
 import type { VehicleDesign } from '../types';
 import MsPanel from './primitives/MsPanel';
 import MsButton from './primitives/MsButton';
 import MsNum from './primitives/MsNum';
 import ChemistryBadge from './ChemistryBadge';
-import { BookOpen, Rocket, Calendar, Weight, ArrowRight, Globe, ExternalLink, Gamepad2, Scale, CheckSquare, Square } from 'lucide-react';
+import { BookOpen, Rocket, Calendar, Weight, ArrowRight, Globe, Scale, CheckSquare, Square, Tag, Filter } from 'lucide-react';
 
 interface LibraryEntry {
   id: string; name: string; type: string; tl: number; pmr: number;
@@ -16,7 +14,7 @@ interface LibraryEntry {
   tliPayloadKg: number | null; gtoPayloadKg: number | null;
   totalDeltaV: number | null; totalMassTons: number; status: string;
   firstFlight: string; origin: string; description: string;
-  thumbnail: string; source: 'msds' | 'simplerockets'; simplerockets?: SimpleRocketsCraft;
+  thumbnail: string; source: 'msds' | 'simplerockets'; tags?: string[];
 }
 
 export default function LibraryScreen() {
@@ -25,41 +23,38 @@ export default function LibraryScreen() {
   const [loading, setLoading] = useState(true);
   const [selectedEntry, setSelectedEntry] = useState<LibraryEntry | null>(null);
   const [filter, setFilter] = useState<'all' | 'msds' | 'simplerockets'>('all');
+  const [tagFilter, setTagFilter] = useState<string>('all');
   const [compareMode, setCompareMode] = useState(false);
   const [compareSelection, setCompareSelection] = useState<Set<string>>(new Set());
 
   useEffect(() => {
     const base = (import.meta as any).env?.BASE_URL || '/';
-    Promise.all([
-      fetch(`${base}data/library/index.json`).then(r => r.json()),
-      fetch(`${base}data/library/simple-rockets-index.json`).then(r => r.json()),
-    ]).then(([msdsData, srData]) => {
-      const msdsEntries: LibraryEntry[] = (msdsData.vehicles || []).map((v: any) => ({ ...v, source: 'msds' as const, thumbnail: v.thumbnail || '🚀' }));
-      const srEntries: LibraryEntry[] = (srData.crafts || []).map((c: SimpleRocketsCraft) => ({
-        id: `sr-${c.id}`, name: c.name, type: c.type,
-        tl: Math.floor((parseInt(c.era) - 1950) / 5) / 10 + 7, pmr: 7,
-        classification: `${c.chemistry.toUpperCase()}/?S/${c.origin}-?`, kind: `${c.type}-?-?`,
-        leoPayloadKg: null, tliPayloadKg: null, gtoPayloadKg: null,
-        totalDeltaV: c.specs.deltaV, totalMassTons: c.specs.wetMass ? c.specs.wetMass / 1000 : 0,
-        status: 'community', firstFlight: `${c.era}-01-01`, origin: c.origin,
-        description: `SimpleRockets community craft: ${c.specs.parts || '?'} parts. Chemistry: ${c.chemistry}.`,
-        thumbnail: '🎮', source: 'simplerockets' as const, simplerockets: c,
-      }));
-      setEntries([...msdsEntries, ...srEntries]); setLoading(false);
-    }).catch((err) => { console.error('Failed to load library:', err); setLoading(false); });
+    fetch(`${base}data/library/index.json`)
+      .then(r => r.json())
+      .then((data) => {
+        const entries: LibraryEntry[] = (data.vehicles || []).map((v: any) => ({
+          ...v,
+          source: v.status === 'converted' ? 'simplerockets' : 'msds' as const,
+          thumbnail: v.thumbnail || '🚀',
+        }));
+        setEntries(entries);
+        setLoading(false);
+      })
+      .catch((err) => { console.error('Failed to load library:', err); setLoading(false); });
   }, []);
 
-  const filteredEntries = entries.filter((e) => filter === 'all' || e.source === filter);
+  const allTags = Array.from(new Set(entries.flatMap((e) => e.tags || []))).sort();
+  const liftTags = allTags.filter((t) => t.includes('Lift'));
+
+  const filteredEntries = entries.filter((e) => {
+    const sourceMatch = filter === 'all' || e.source === filter;
+    const tagMatch = tagFilter === 'all' || (e.tags || []).includes(tagFilter);
+    return sourceMatch && tagMatch;
+  });
 
   const getOriginColor = (origin: string) => {
     const map: Record<string, string> = { USA: 'text-ms-cyan', USSR: 'text-ms-warn', EUR: 'text-ms-good', CHN: 'text-ms-amber', JPN: 'text-ms-ink-soft', IND: 'text-ms-amber', MLT: 'text-ms-ink-dim' };
     return map[origin] || 'text-ms-ink-soft';
-  };
-
-  const handleConvertSimpleRockets = (entry: LibraryEntry) => {
-    if (!entry.simplerockets) return;
-    setCurrentVehicle(convertSimpleRocketsToMSDS(entry.simplerockets));
-    setScreen('design');
   };
 
   const toggleCompareSelection = (entry: LibraryEntry) => {
@@ -75,16 +70,13 @@ export default function LibraryScreen() {
     const selected = entries.filter((e) => compareSelection.has(e.id));
     const vehicles: VehicleDesign[] = [];
     for (const entry of selected) {
-      if (entry.source === 'msds') {
-        try {
-          const base = (import.meta as any).env?.BASE_URL || '/';
-          const res = await fetch(`${base}data/library/${entry.id}.json`);
-          const data = await res.json();
-          vehicles.push(data.vehicle);
-        } catch (err) { console.error('Failed to load vehicle for compare:', err); }
-      } else if (entry.source === 'simplerockets' && entry.simplerockets) {
-        vehicles.push(convertSimpleRocketsToMSDS(entry.simplerockets));
-      }
+      try {
+        const base = (import.meta as any).env?.BASE_URL || '/';
+        const res = await fetch(`${base}data/library/${entry.id}.json`);
+        const data = await res.json();
+        const vehicle = data.vehicle || data;
+        vehicles.push(vehicle);
+      } catch (err) { console.error('Failed to load vehicle for compare:', err); }
     }
     setCompareVehicles(vehicles);
     setScreen('compare');
@@ -109,6 +101,12 @@ export default function LibraryScreen() {
           <span className="text-xs text-ms-ink-dim">{filteredEntries.length} vehicles</span>
         </div>
         <div className="flex items-center gap-2">
+          <select value={tagFilter} onChange={(e) => setTagFilter(e.target.value)} className="text-xs py-1 px-2 bg-ms-input border border-ms-hair">
+            <option value="all">All Lift Classes</option>
+            {liftTags.map((tag) => (
+              <option key={tag} value={tag}>{tag}</option>
+            ))}
+          </select>
           <select value={filter} onChange={(e) => setFilter(e.target.value as any)} className="text-xs py-1 px-2 bg-ms-input border border-ms-hair">
             <option value="all">All Sources</option><option value="msds">MSDS Calibrated</option><option value="simplerockets">SimpleRockets</option>
           </select>
@@ -141,8 +139,15 @@ export default function LibraryScreen() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 mb-2">
-                      <ChemistryBadge chemistry={entry.classification.startsWith('K') ? 'kerolox' : entry.classification.startsWith('H') ? 'hydrolox' : entry.classification.startsWith('M') ? 'methalox' : entry.classification.startsWith('HYG') ? 'hypergolic' : entry.classification.startsWith('S') ? 'apcp' : entry.simplerockets?.chemistry || 'unknown'} />
+                      <ChemistryBadge chemistry={entry.classification.startsWith('K') ? 'kerolox' : entry.classification.startsWith('H') ? 'hydrolox' : entry.classification.startsWith('M') ? 'methalox' : entry.classification.startsWith('HYG') ? 'hypergolic' : entry.classification.startsWith('S') ? 'apcp' : 'unknown'} />
                       <span className="text-xs text-ms-ink-dim">{entry.classification.split('/')[0]}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {(entry.tags || []).slice(0, 3).map((tag) => (
+                        <span key={tag} className={`text-[9px] px-1.5 py-0.5 font-mono border ${tag.includes('Heavy') ? 'bg-ms-warn/10 border-ms-warn/30 text-ms-warn' : tag.includes('Space Age') || tag.includes('Era') ? 'bg-ms-cyan/10 border-ms-cyan/30 text-ms-cyan' : 'bg-ms-bg border-ms-hair text-ms-ink-dim'}`}>
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                     <div className="grid grid-cols-2 gap-2 mb-3">
                       <MsNum label="TL" value={entry.tl} size="sm" />
@@ -195,30 +200,9 @@ export default function LibraryScreen() {
                   <div className="flex justify-between"><span className="text-ms-ink-dim">Source</span><span className={selectedEntry.source === 'msds' ? 'text-ms-good' : 'text-purple-400'}>{selectedEntry.source === 'msds' ? 'MSDS Calibrated' : 'SimpleRockets'}</span></div>
                 </div>
                 <div className="text-xs text-ms-ink-soft pt-2 border-t border-ms-hair">{selectedEntry.description}</div>
-                {selectedEntry.source === 'simplerockets' && selectedEntry.simplerockets && (
-                  <div className="space-y-2 pt-2 border-t border-ms-hair">
-                    <div className="grid grid-cols-2 gap-2 text-xs text-ms-ink-soft">
-                      <span>Parts: {selectedEntry.simplerockets.specs.parts || '?'}</span>
-                      <span>Engines: {selectedEntry.simplerockets.specs.engines || '?'}</span>
-                      <span>Version: {selectedEntry.simplerockets.specs.gameVersion || '?'}</span>
-                      <span>Platform: {selectedEntry.simplerockets.specs.createdOn || '?'}</span>
-                    </div>
-                    <a href={selectedEntry.simplerockets.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 w-full py-2 text-xs font-mono bg-purple-500/10 text-purple-400 border border-purple-500/30 hover:bg-purple-500/20 transition-colors">
-                      <ExternalLink className="w-3 h-3" /> Open on SimpleRockets.com
-                    </a>
-                    <button onClick={() => navigator.clipboard.writeText(selectedEntry.simplerockets?.importLink || '')} className="flex items-center justify-center gap-2 w-full py-2 text-xs font-mono bg-ms-input text-ms-ink-soft border border-ms-hair hover:border-ms-cyan transition-colors">
-                      <Gamepad2 className="w-3 h-3" /> Copy Import Link
-                    </button>
-                    <MsButton variant="primary" size="md" className="w-full justify-center" onClick={() => handleConvertSimpleRockets(selectedEntry)}>
-                      <ArrowRight className="w-4 h-4" /> Convert to MSDS
-                    </MsButton>
-                  </div>
-                )}
-                {selectedEntry.source === 'msds' && (
-                  <MsButton variant="primary" size="md" className="w-full justify-center" onClick={() => loadLibraryVehicle(selectedEntry.id)}>
-                    <ArrowRight className="w-4 h-4" /> Load into Designer
-                  </MsButton>
-                )}
+                <MsButton variant="primary" size="md" className="w-full justify-center" onClick={() => loadLibraryVehicle(selectedEntry.id)}>
+                  <ArrowRight className="w-4 h-4" /> Load into Designer
+                </MsButton>
               </div>
             </MsPanel>
           ) : (
@@ -226,7 +210,7 @@ export default function LibraryScreen() {
               <div className="text-center py-8 text-ms-ink-dim">
                 <Globe className="w-12 h-12 mx-auto mb-3 opacity-30" />
                 <p className="text-sm">Click a vehicle card to view details.</p>
-                <p className="text-xs mt-2 text-ms-ink-dim">SimpleRockets crafts are community builds from the game.<br />MSDS calibrated vehicles use real-world physics data.</p>
+                <p className="text-xs mt-2 text-ms-ink-dim">Vehicles marked SR2 are converted from SimpleRockets community builds.<br />MSDS calibrated vehicles use real-world physics data.</p>
               </div>
             </MsPanel>
           )}

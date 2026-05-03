@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.267Z",
+    "originalUrl": "https://www.simplerockets.com/c/HknL22/N1-L3-OLD-VERSION",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 753,
+      "referenceDeltaV": 10600
+    }
+  },
+  "vehicle": {
+    "id": "sr-HknL22",
+    "name": "N1-L3 OLD VERSION (SR)",
+    "type": "LV",
+    "tl": 7.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "317602d6-aa90-4f21-9eaa-e9eb16ebd59c",
+        "name": "N1-L3 OLD VERSION Structure",
+        "massTons": 49.2786,
+        "cost": 703.98,
+        "capacityTons": 830.9840384,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "a71e141e-4642-4b68-a717-5d8693025131",
+            "type": "engine",
+            "name": "Engine ×30",
+            "massKg": 34500,
+            "costMusd": 75,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-30",
+              "name": "Engine ×30",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 30,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 25350,
+              "dryMassKg": 34500,
+              "costMusd": 75,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "27f2237c-14e6-4268-a5a9-d2cd781d80a8",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 688062.816,
+            "costMusd": 5.460816,
+            "fuelTank": {
+              "id": "d3104278-112e-4dbc-af7c-3c916bd48c08",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 682602,
+              "tankMassKg": 5460.816,
+              "ullageFraction": 0.03,
+              "totalMassKg": 688062.816
+            }
+          },
+          {
+            "id": "d67b3b9f-aa3a-41e3-bad4-49762057fe89",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.4,
+              "yearRange": "1970–1974",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 722.594816,
+        "attachedCost": 83.960816,
+        "totalMassTons": 771.873416,
+        "totalCost": 787.940816,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 771.873416,
+    "totalCost": 787.940816,
+    "totalDeltaV": 10600,
+    "leoPayloadKg": 95000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": 23500,
+    "createdAt": "2026-05-03T12:13:19.665Z",
+    "updatedAt": "2026-05-03T12:13:19.665Z",
+    "notes": "Converted from SimpleRockets craft HknL22. Origin: USSR. URL: https://www.simplerockets.com/c/HknL22/N1-L3-OLD-VERSION"
+  }
+}

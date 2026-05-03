@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.268Z",
+    "originalUrl": "https://www.simplerockets.com/c/LV1JV6",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 5000,
+      "referenceDeltaV": 1600
+    }
+  },
+  "vehicle": {
+    "id": "sr-LV1JV6",
+    "name": "Starship (SR)",
+    "type": "LV",
+    "tl": 8.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "0cc4804f-1563-48de-9d02-e5081873da91",
+        "name": "Starship Structure",
+        "massTons": 105,
+        "cost": 30,
+        "capacityTons": 5406.3386,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "b40c11d4-3dcd-4d22-a328-a84b94d7556e",
+            "type": "engine",
+            "name": "Engine ×33",
+            "massKg": 64350,
+            "costMusd": 66,
+            "engineAssembly": {
+              "id": "ff-methalox-1-gimbaled-2-33",
+              "name": "Engine ×33",
+              "powerPlantId": "ff-methalox-1",
+              "driveId": "gimbaled-2",
+              "count": 33,
+              "vacuumIsp": 380,
+              "seaLevelIsp": 331,
+              "totalThrustKn": 75900,
+              "dryMassKg": 64350,
+              "costMusd": 66,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "c6689ee1-d786-4cdf-b542-c9d828ef5296",
+            "type": "fuel_tank",
+            "name": "CH4/LOX Tank",
+            "massKg": 4636800,
+            "costMusd": 36.800000000000004,
+            "fuelTank": {
+              "id": "26418e2e-8763-4d57-833d-95e8dc9aff7a",
+              "name": "CH4/LOX Tank",
+              "fuelType": "CH4/LOX",
+              "propellantMassKg": 4600000,
+              "tankMassKg": 36800,
+              "ullageFraction": 0.03,
+              "totalMassKg": 4636800
+            }
+          },
+          {
+            "id": "e57d4199-37a0-4cbd-b6c8-65885a89f676",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8.4,
+              "yearRange": "2020–2024",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 4701.164000000001,
+        "attachedCost": 103.60000000000001,
+        "totalMassTons": 4806.164000000001,
+        "totalCost": 133.60000000000002,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 4806.164000000001,
+    "totalCost": 133.60000000000002,
+    "totalDeltaV": 1600,
+    "leoPayloadKg": 150000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.662Z",
+    "updatedAt": "2026-05-03T12:13:19.662Z",
+    "notes": "Converted from SimpleRockets craft LV1JV6. Origin: USA. URL: https://www.simplerockets.com/c/LV1JV6"
+  }
+}

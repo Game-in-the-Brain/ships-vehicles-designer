@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.270Z",
+    "originalUrl": "https://www.simplerockets.com/c/y5gk3c",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 18000,
+      "referenceDeltaV": 6200
+    }
+  },
+  "vehicle": {
+    "id": "sr-y5gk3c",
+    "name": "The Sea Dragon (SR)",
+    "type": "LV",
+    "tl": 7.2,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "aa120393-7710-49a2-bfcd-0a8070fe92e1",
+        "name": "The Sea Dragon Structure",
+        "massTons": 315,
+        "cost": 500,
+        "capacityTons": 18548.559299999997,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "26589778-dfe7-48bd-956f-63b3a2258305",
+            "type": "engine",
+            "name": "Engine ×1",
+            "massKg": 1150,
+            "costMusd": 2.5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-1",
+              "name": "Engine ×1",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 1,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 845,
+              "dryMassKg": 1150,
+              "costMusd": 2.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "6a3e3ab3-7a62-44ac-8927-55b06507a3fe",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 16128000,
+            "costMusd": 128,
+            "fuelTank": {
+              "id": "15f60bc5-85f0-43ad-b2ba-96abc27fd61f",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 16000000,
+              "tankMassKg": 128000,
+              "ullageFraction": 0.03,
+              "totalMassKg": 16128000
+            }
+          },
+          {
+            "id": "231e3baa-72dc-455a-85fc-9b1c549ecf3a",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.2,
+              "yearRange": "1960–1964",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 16129.181999999999,
+        "attachedCost": 134,
+        "totalMassTons": 16444.182,
+        "totalCost": 634,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 16444.182,
+    "totalCost": 634,
+    "totalDeltaV": 6200,
+    "leoPayloadKg": 550000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.664Z",
+    "updatedAt": "2026-05-03T12:13:19.664Z",
+    "notes": "Converted from SimpleRockets craft y5gk3c. Origin: USA. URL: https://www.simplerockets.com/c/y5gk3c"
+  }
+}

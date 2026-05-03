@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.268Z",
+    "originalUrl": "https://www.simplerockets.com/c/cEexA4",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 250.99999999999997,
+      "referenceDeltaV": 4800
+    }
+  },
+  "vehicle": {
+    "id": "sr-cEexA4",
+    "name": "R-7 Semiorka (SR)",
+    "type": "LV",
+    "tl": 7,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "ff01aa6f-3b6c-471b-b791-af507e060ff7",
+        "name": "R-7 Semiorka Structure",
+        "massTons": 24.534299999999998,
+        "cost": 350.49,
+        "capacityTons": 257.4603991999999,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "1aee31f4-add7-4af9-87a1-1f8bb1a8724e",
+            "type": "engine",
+            "name": "Engine ×5",
+            "massKg": 5750,
+            "costMusd": 12.5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-5",
+              "name": "Engine ×5",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 5,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 4225,
+              "dryMassKg": 5750,
+              "costMusd": 12.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "49047005-47e6-4219-8561-0b4d26d8481b",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 217678.60799999998,
+            "costMusd": 1.7276079999999998,
+            "fuelTank": {
+              "id": "2b66123a-2fa6-4b5f-af91-3772e060b751",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 215950.99999999997,
+              "tankMassKg": 1727.6079999999997,
+              "ullageFraction": 0.03,
+              "totalMassKg": 217678.60799999998
+            }
+          },
+          {
+            "id": "7be238de-cc02-4da4-81aa-0fb46960f644",
+            "type": "avionics",
+            "name": "Analog Radio-Inertial Guidance",
+            "massKg": 450,
+            "costMusd": 2.5,
+            "avionicsUnit": {
+              "id": "av-guidance-70",
+              "category": "guidance",
+              "name": "Analog Radio-Inertial Guidance",
+              "shortName": "Analog Radio-Inertial",
+              "tl": 7,
+              "yearRange": "1950–1954",
+              "massKg": 450,
+              "costMusd": 2.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 223.87860799999996,
+        "attachedCost": 16.727608,
+        "totalMassTons": 248.41290799999996,
+        "totalCost": 367.217608,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 248.41290799999996,
+    "totalCost": 367.217608,
+    "totalDeltaV": 4800,
+    "leoPayloadKg": 1300,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.658Z",
+    "updatedAt": "2026-05-03T12:13:19.659Z",
+    "notes": "Converted from SimpleRockets craft cEexA4. Origin: USSR. URL: https://www.simplerockets.com/c/cEexA4"
+  }
+}

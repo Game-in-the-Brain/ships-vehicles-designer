@@ -51,6 +51,17 @@ if (html.includes('registerSW.js') && html.includes('src=')) {
   console.error('❌ ERROR: registerSW.js is still external');
   process.exit(1);
 }
+// Images + manifest must be inlined (Forgejo serves them as text/plain)
+if (html.match(/href="[^"]*\.(png|svg|ico|webmanifest)"/)) {
+  console.error('❌ ERROR: index.html still references external images/manifest');
+  process.exit(1);
+}
+// Service worker files can't load as text/plain
+const swFiles = fs.readdirSync(DIST).filter(f => f.startsWith('sw.js') || f.startsWith('workbox-'));
+if (swFiles.length > 0) {
+  console.error('❌ ERROR: Service worker files still in dist/ (blocked by text/plain):', swFiles.join(', '));
+  process.exit(1);
+}
 console.log('✅ All assets inlined');
 
 // 3. Deploy to static-pages branch

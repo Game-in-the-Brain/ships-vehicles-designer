@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.266Z",
+    "originalUrl": "https://www.simplerockets.com/c/42aU98",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 10000,
+      "referenceDeltaV": 9200
+    }
+  },
+  "vehicle": {
+    "id": "sr-42aU98",
+    "name": "Bussard Ramjet ISV (SR)",
+    "type": "Sail",
+    "tl": 9,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "64d36a5e-71ed-4469-8f88-0c0a377535e0",
+        "name": "Bussard Ramjet ISV Structure",
+        "massTons": 3500,
+        "cost": 5000,
+        "capacityTons": 10000,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "13056b0d-9942-405f-bbc4-452293508d75",
+            "type": "engine",
+            "name": "Engine ×1",
+            "massKg": 6650,
+            "costMusd": 100.5,
+            "engineAssembly": {
+              "id": "ntr-1-fixed-bell-2-1",
+              "name": "Engine ×1",
+              "powerPlantId": "ntr-1",
+              "driveId": "fixed-bell-2",
+              "count": 1,
+              "vacuumIsp": 900,
+              "seaLevelIsp": 783,
+              "totalThrustKn": 250,
+              "dryMassKg": 6650,
+              "costMusd": 100.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "0f8517c2-42f5-4b52-859d-8b2c90cf66a0",
+            "type": "fuel_tank",
+            "name": "LH2 Tank",
+            "massKg": 5040000,
+            "costMusd": 40,
+            "fuelTank": {
+              "id": "2cd9d673-7183-47dd-92d8-2f574055d6df",
+              "name": "LH2 Tank",
+              "fuelType": "LH2",
+              "propellantMassKg": 5000000,
+              "tankMassKg": 40000,
+              "ullageFraction": 0.03,
+              "totalMassKg": 5040000
+            }
+          },
+          {
+            "id": "b12b6de4-4aeb-40d4-93dc-a57c20eb0ceb",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 9,
+              "yearRange": "2050–2054",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 5046.664,
+        "attachedCost": 141.3,
+        "totalMassTons": 8546.664,
+        "totalCost": 5141.3,
+        "overCapacity": false,
+        "capacityUsedPercent": 50.46664
+      }
+    ],
+    "totalMassTons": 8546.664,
+    "totalCost": 5141.3,
+    "totalDeltaV": 9200,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.664Z",
+    "updatedAt": "2026-05-03T12:13:19.664Z",
+    "notes": "Converted from SimpleRockets craft 42aU98. Origin: THEO. URL: https://www.simplerockets.com/c/42aU98"
+  }
+}

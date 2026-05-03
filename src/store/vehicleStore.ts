@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import type { PowerPlant, Drive, AvionicsUnit, ComputerSystem, CrewModule, BridgeType, Sensor, Structure, VehicleDesign, AttachedComponent, AppSettings, AppScreen } from '../types';
+import { downloadJson, importJsonFile } from '../utils/exportImport';
 
 interface StoreState {
   powerPlants: PowerPlant[]; drives: Drive[]; avionics: AvionicsUnit[];
@@ -9,6 +10,13 @@ interface StoreState {
   sensors: Sensor[]; loaded: boolean; loadError: string | null;
   currentVehicle: VehicleDesign | null;
   currentScreen: AppScreen; settings: AppSettings; compareVehicles: VehicleDesign[];
+}
+
+export interface SavedVehicleRecord {
+  id: string;
+  name: string;
+  vehicle: VehicleDesign;
+  savedAt: string;
 }
 
 interface StoreActions {
@@ -26,6 +34,15 @@ interface StoreActions {
   clearCompare: () => void;
   exportTables: () => string;
   importTables: (data: any) => void;
+  saveVehicle: (vehicle: VehicleDesign) => void;
+  saveVehicleAs: (name: string) => void;
+  loadSavedVehicle: (id: string) => void;
+  listSavedVehicles: () => SavedVehicleRecord[];
+  deleteSavedVehicle: (id: string) => void;
+  exportVehicleToJSON: (vehicle: VehicleDesign) => string;
+  importVehicleFromJSON: (json: string) => void;
+  exportVehicleToFile: (vehicle: VehicleDesign) => void;
+  importVehicleFromFile: (file: File) => Promise<void>;
 }
 
 export const useVehicleStore = create<StoreState & StoreActions>()(
@@ -135,7 +152,10 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
         const res = await fetch(`${base}data/library/${vehicleId}.json`);
         if (!res.ok) throw new Error(`Failed to load ${vehicleId}`);
         const data = await res.json();
-        set({ currentVehicle: data.vehicle, currentScreen: 'design' });
+        // Support both wrapped ({vehicle}) and raw (direct VehicleDesign) formats
+        const vehicle = data.vehicle || data;
+        if (!vehicle || !vehicle.id) throw new Error(`Invalid vehicle data for ${vehicleId}`);
+        set({ currentVehicle: vehicle, currentScreen: 'design' });
       } catch (err) { console.error('Failed to load library vehicle:', err); }
     },
     setCompareVehicles: (vehicles) => set({ compareVehicles: vehicles }),
@@ -172,6 +192,107 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
         if (data.bridge_types) state.bridgeTypes = data.bridge_types;
         if (data.sensors) state.sensors = data.sensors;
       });
+    },
+
+    saveVehicle: (vehicle: VehicleDesign) => {
+      const records = get().listSavedVehicles();
+      const existingIndex = records.findIndex((r) => r.id === vehicle.id);
+      const record: SavedVehicleRecord = {
+        id: vehicle.id,
+        name: vehicle.name,
+        vehicle,
+        savedAt: new Date().toISOString(),
+      };
+      if (existingIndex >= 0) {
+        records[existingIndex] = record;
+      } else {
+        records.push(record);
+      }
+      localStorage.setItem('mneme-saved-vehicles', JSON.stringify(records));
+    },
+
+    saveVehicleAs: (name: string) => {
+      const state = get();
+      if (!state.currentVehicle) return;
+      const vehicle: VehicleDesign = { ...state.currentVehicle, id: crypto.randomUUID(), name };
+      const record: SavedVehicleRecord = {
+        id: vehicle.id,
+        name,
+        vehicle,
+        savedAt: new Date().toISOString(),
+      };
+      const records = get().listSavedVehicles();
+      records.push(record);
+      localStorage.setItem('mneme-saved-vehicles', JSON.stringify(records));
+      set({ currentVehicle: vehicle });
+    },
+
+    loadSavedVehicle: (id: string) => {
+      const records = get().listSavedVehicles();
+      const record = records.find((r) => r.id === id);
+      if (record) {
+        set({ currentVehicle: record.vehicle, currentScreen: 'design' });
+      }
+    },
+
+    listSavedVehicles: () => {
+      try {
+        const raw = localStorage.getItem('mneme-saved-vehicles');
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) return parsed as SavedVehicleRecord[];
+        return [];
+      } catch {
+        return [];
+      }
+    },
+
+    deleteSavedVehicle: (id: string) => {
+      const records = get().listSavedVehicles().filter((r) => r.id !== id);
+      localStorage.setItem('mneme-saved-vehicles', JSON.stringify(records));
+    },
+
+    exportVehicleToJSON: (vehicle: VehicleDesign) => {
+      return JSON.stringify(vehicle, null, 2);
+    },
+
+    importVehicleFromJSON: (json: string) => {
+      try {
+        const data = JSON.parse(json);
+        if (!data || typeof data !== 'object') throw new Error('Invalid vehicle data');
+        if (!data.id || !data.name || !Array.isArray(data.structures)) {
+          throw new Error('Missing required vehicle fields');
+        }
+        const vehicle: VehicleDesign = {
+          ...data,
+          updatedAt: new Date().toISOString(),
+        };
+        set({ currentVehicle: vehicle, currentScreen: 'design' });
+      } catch (err) {
+        console.error('Failed to import vehicle:', err);
+        throw err;
+      }
+    },
+
+    exportVehicleToFile: (vehicle: VehicleDesign) => {
+      const json = get().exportVehicleToJSON(vehicle);
+      const filename = `${vehicle.name.replace(/[^a-zA-Z0-9_-]/g, '_')}.json`;
+      downloadJson(json, filename);
+    },
+
+    importVehicleFromFile: async (file: File) => {
+      const data = await importJsonFile(file);
+      if (!data || typeof data !== 'object') {
+        throw new Error('Invalid vehicle data');
+      }
+      if (!('id' in data) || !('name' in data) || !Array.isArray((data as any).structures)) {
+        throw new Error('Missing required vehicle fields');
+      }
+      const vehicle: VehicleDesign = {
+        ...(data as VehicleDesign),
+        updatedAt: new Date().toISOString(),
+      };
+      set({ currentVehicle: vehicle, currentScreen: 'design' });
     },
   }), {
     name: 'mneme-vehicle-store',

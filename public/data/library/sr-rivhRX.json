@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.269Z",
+    "originalUrl": "https://www.simplerockets.com/c/rivhRX",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 2400,
+      "referenceDeltaV": 14400
+    }
+  },
+  "vehicle": {
+    "id": "sr-rivhRX",
+    "name": "Baran Space Shuttle (SR)",
+    "type": "Orb",
+    "tl": 7.8,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "97d2e309-2c20-48fc-aabd-5a14fb25eb03",
+        "name": "Baran Space Shuttle Structure",
+        "massTons": 73.5,
+        "cost": 300,
+        "capacityTons": 2400,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "fa616efa-b017-4fb4-922f-fdfdee5e4967",
+            "type": "engine",
+            "name": "Engine ×4",
+            "massKg": 13800,
+            "costMusd": 62,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-4",
+              "name": "Engine ×4",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 4,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 4120,
+              "dryMassKg": 13800,
+              "costMusd": 62,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "0546ced3-a7e4-4731-a475-80f61301fab5",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 1915200,
+            "costMusd": 15.200000000000001,
+            "fuelTank": {
+              "id": "9b85e7d6-09b7-4215-85b4-fb5b5bde57e6",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 1900000,
+              "tankMassKg": 15200,
+              "ullageFraction": 0.03,
+              "totalMassKg": 1915200
+            }
+          },
+          {
+            "id": "2d4ee183-5e04-44da-a6dd-22d46555a431",
+            "type": "avionics",
+            "name": "Redundant Digital Flight System",
+            "massKg": 70,
+            "costMusd": 4.2,
+            "avionicsUnit": {
+              "id": "av-guidance-75",
+              "category": "guidance",
+              "name": "Redundant Digital Flight System",
+              "shortName": "Redundant Digital",
+              "tl": 7.8,
+              "yearRange": "1990–1994",
+              "massKg": 70,
+              "costMusd": 4.2,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 1929.07,
+        "attachedCost": 81.4,
+        "totalMassTons": 2002.57,
+        "totalCost": 381.4,
+        "overCapacity": false,
+        "capacityUsedPercent": 80.37791666666666
+      }
+    ],
+    "totalMassTons": 2002.57,
+    "totalCost": 381.4,
+    "totalDeltaV": 14400,
+    "leoPayloadKg": 30000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.663Z",
+    "updatedAt": "2026-05-03T12:13:19.663Z",
+    "notes": "Converted from SimpleRockets craft rivhRX. Origin: USSR. URL: https://www.simplerockets.com/c/rivhRX"
+  }
+}

@@ -2,8 +2,8 @@
   "_meta": {
     "format": "simple-rockets-index",
     "version": "0.1",
-    "scrapedAt": "2026-05-02T14:47:25.420Z",
-    "count": 30
+    "scrapedAt": "2026-05-03T12:09:09.321Z",
+    "count": 31
   },
   "crafts": [
     {
@@ -773,6 +773,32 @@
         "createdOn": "iOS"
       },
       "chemistry": "electric"
+    },
+    {
+      "id": "HknL22",
+      "name": "N1-L3 OLD VERSION",
+      "era": "1969",
+      "origin": "USSR",
+      "type": "LV",
+      "url": "https://www.simplerockets.com/c/HknL22/N1-L3-OLD-VERSION",
+      "importLink": "simplerockets2://craft/HknL22",
+      "specs": {
+        "parts": "157",
+        "price": "$76,214k",
+        "dimensions": {
+          "length": 74,
+          "width": 10,
+          "height": 10
+        },
+        "deltaV": 10600,
+        "thrust": 18200,
+        "engines": "37",
+        "wetMass": 753000,
+        "dryMass": 70398,
+        "gameVersion": "0.9.508.0",
+        "createdOn": "Windows"
+      },
+      "chemistry": "kerolox"
     }
   ]
 }

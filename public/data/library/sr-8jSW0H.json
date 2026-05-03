@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.267Z",
+    "originalUrl": "https://www.simplerockets.com/c/8jSW0H",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 656,
+      "referenceDeltaV": 5400
+    }
+  },
+  "vehicle": {
+    "id": "sr-8jSW0H",
+    "name": "Ariane 6 (SR)",
+    "type": "LV",
+    "tl": 8.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "e56c15c8-adba-4573-85af-e53a5fd0a2ee",
+        "name": "Ariane 6 Structure",
+        "massTons": 54.245799999999996,
+        "cost": 774.94,
+        "capacityTons": 674.5877552000001,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "0fcf9aa1-ecfb-46bd-bb3f-8f2a2c72e120",
+            "type": "engine",
+            "name": "Engine ×1",
+            "massKg": 3450,
+            "costMusd": 15.5,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-1",
+              "name": "Engine ×1",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 1,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 1030,
+              "dryMassKg": 3450,
+              "costMusd": 15.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "8d0709fd-4601-466d-a994-59704d349703",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 583134.048,
+            "costMusd": 4.628048,
+            "fuelTank": {
+              "id": "1c224593-2a1c-4968-9d44-6c8bf88ccab9",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 578506,
+              "tankMassKg": 4628.048,
+              "ullageFraction": 0.03,
+              "totalMassKg": 583134.048
+            }
+          },
+          {
+            "id": "9e9ff60e-fdbd-4b12-8d3d-c22402a9dc9a",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8.4,
+              "yearRange": "2020–2024",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 586.5980480000001,
+        "attachedCost": 20.928048,
+        "totalMassTons": 640.8438480000001,
+        "totalCost": 795.868048,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 640.8438480000001,
+    "totalCost": 795.868048,
+    "totalDeltaV": 5400,
+    "leoPayloadKg": 21650,
+    "gtoPayloadKg": 11500,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.662Z",
+    "updatedAt": "2026-05-03T12:13:19.662Z",
+    "notes": "Converted from SimpleRockets craft 8jSW0H. Origin: EUR. URL: https://www.simplerockets.com/c/8jSW0H"
+  }
+}

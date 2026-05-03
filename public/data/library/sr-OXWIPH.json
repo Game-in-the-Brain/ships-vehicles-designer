@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.268Z",
+    "originalUrl": "https://www.simplerockets.com/c/OXWIPH",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 10000,
+      "referenceDeltaV": 722900
+    }
+  },
+  "vehicle": {
+    "id": "sr-OXWIPH",
+    "name": "Project Orion Nuclear Pulse (SR)",
+    "type": "OTV",
+    "tl": 7.2,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "89ae3cdc-ed97-4a2f-829c-6439520f7bd9",
+        "name": "Project Orion Nuclear Pulse Structure",
+        "massTons": 560,
+        "cost": 2000,
+        "capacityTons": 12332.636799999998,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "54b6aa66-528a-4ef1-b142-b523e29250d3",
+            "type": "engine",
+            "name": "Engine ×400",
+            "massKg": 2660000,
+            "costMusd": 40200,
+            "engineAssembly": {
+              "id": "ntr-1-fixed-bell-2-400",
+              "name": "Engine ×400",
+              "powerPlantId": "ntr-1",
+              "driveId": "fixed-bell-2",
+              "count": 400,
+              "vacuumIsp": 900,
+              "seaLevelIsp": 783,
+              "totalThrustKn": 100000,
+              "dryMassKg": 2660000,
+              "costMusd": 40200,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "9bcc7caf-e096-45ea-a9f8-89e166b79654",
+            "type": "fuel_tank",
+            "name": "LH2 Tank",
+            "massKg": 8064000,
+            "costMusd": 64,
+            "fuelTank": {
+              "id": "1f2b0262-6b3f-4898-8793-a272729e934c",
+              "name": "LH2 Tank",
+              "fuelType": "LH2",
+              "propellantMassKg": 8000000,
+              "tankMassKg": 64000,
+              "ullageFraction": 0.03,
+              "totalMassKg": 8064000
+            }
+          },
+          {
+            "id": "bf199ebf-738b-47d3-b15f-d52dd80203ec",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.2,
+              "yearRange": "1960–1964",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 10724.032,
+        "attachedCost": 40267.5,
+        "totalMassTons": 11284.032,
+        "totalCost": 42267.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 11284.032,
+    "totalCost": 42267.5,
+    "totalDeltaV": 722900,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.664Z",
+    "updatedAt": "2026-05-03T12:13:19.664Z",
+    "notes": "Converted from SimpleRockets craft OXWIPH. Origin: USA. URL: https://www.simplerockets.com/c/OXWIPH"
+  }
+}

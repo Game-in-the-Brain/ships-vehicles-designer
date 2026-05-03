@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.267Z",
+    "originalUrl": "https://www.simplerockets.com/c/9VK79N",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 1420,
+      "referenceDeltaV": 66700
+    }
+  },
+  "vehicle": {
+    "id": "sr-9VK79N",
+    "name": "Falcon Heavy (SR)",
+    "type": "LV",
+    "tl": 8.3,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "68f98644-bf7f-4b12-8d0a-210e9728ca77",
+        "name": "Falcon Heavy Structure",
+        "massTons": 24.5,
+        "cost": 30,
+        "capacityTons": 1658.6035999999997,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "ef314a46-ba12-42dc-894f-c3b0f81cde4c",
+            "type": "engine",
+            "name": "Engine ×27",
+            "massKg": 31050,
+            "costMusd": 67.5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-27",
+              "name": "Engine ×27",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 27,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 22815,
+              "dryMassKg": 31050,
+              "costMusd": 67.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "fafe88d6-ba51-4fc9-8dbc-9129fb983dd5",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 1411200,
+            "costMusd": 11.200000000000001,
+            "fuelTank": {
+              "id": "f3fff366-9a63-4834-a8f0-01db779edc04",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 1400000,
+              "tankMassKg": 11200,
+              "ullageFraction": 0.03,
+              "totalMassKg": 1411200
+            }
+          },
+          {
+            "id": "51cb2094-da89-48a3-8478-6dab4cc4fdfb",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8.3,
+              "yearRange": "2015–2019",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 1442.264,
+        "attachedCost": 79.5,
+        "totalMassTons": 1466.764,
+        "totalCost": 109.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 1466.764,
+    "totalCost": 109.5,
+    "totalDeltaV": 66700,
+    "leoPayloadKg": 63800,
+    "gtoPayloadKg": 26700,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.662Z",
+    "updatedAt": "2026-05-03T12:13:19.662Z",
+    "notes": "Converted from SimpleRockets craft 9VK79N. Origin: USA. URL: https://www.simplerockets.com/c/9VK79N"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.270Z",
+    "originalUrl": "https://www.simplerockets.com/c/y5U8ek",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 10,
+      "referenceDeltaV": 9200
+    }
+  },
+  "vehicle": {
+    "id": "sr-y5U8ek",
+    "name": "Alcubierre-White Warp (SR)",
+    "type": "Sail",
+    "tl": 9.5,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "0941e4c7-32cb-4aa1-993d-c34eabd6755f",
+        "name": "Alcubierre-White Warp Structure",
+        "massTons": 3.5,
+        "cost": 50,
+        "capacityTons": 10,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "94f88e92-f646-47e2-bdbc-d0b86d517db7",
+            "type": "engine",
+            "name": "Engine ×1",
+            "massKg": 1030,
+            "costMusd": 5.5,
+            "engineAssembly": {
+              "id": "e-ion-1-ion-grid-1-1",
+              "name": "Engine ×1",
+              "powerPlantId": "e-ion-1",
+              "driveId": "ion-grid-1",
+              "count": 1,
+              "vacuumIsp": 310,
+              "seaLevelIsp": 270,
+              "totalThrustKn": 100,
+              "dryMassKg": 1030,
+              "costMusd": 5.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "00dfc2e5-3a48-472d-b0a5-0024460f1b4e",
+            "type": "fuel_tank",
+            "name": "Xe Tank",
+            "massKg": 0,
+            "costMusd": 0,
+            "fuelTank": {
+              "id": "3ac656d9-ac97-4ff9-ad37-935416f75340",
+              "name": "Xe Tank",
+              "fuelType": "Xe",
+              "propellantMassKg": 0,
+              "tankMassKg": 0,
+              "ullageFraction": 0.03,
+              "totalMassKg": 0
+            }
+          },
+          {
+            "id": "e7be1cc5-7e65-4833-89c5-c2c7931a1d45",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 9.5,
+              "yearRange": "2075–2079",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 1.044,
+        "attachedCost": 6.3,
+        "totalMassTons": 4.5440000000000005,
+        "totalCost": 56.3,
+        "overCapacity": false,
+        "capacityUsedPercent": 10.440000000000001
+      }
+    ],
+    "totalMassTons": 4.5440000000000005,
+    "totalCost": 56.3,
+    "totalDeltaV": 9200,
+    "leoPayloadKg": null,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.665Z",
+    "updatedAt": "2026-05-03T12:13:19.665Z",
+    "notes": "Converted from SimpleRockets craft y5U8ek. Origin: THEO. URL: https://www.simplerockets.com/c/y5U8ek"
+  }
+}

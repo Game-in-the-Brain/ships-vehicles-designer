@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.269Z",
+    "originalUrl": "https://www.simplerockets.com/c/tdjwOs",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 2608,
+      "referenceDeltaV": 7200
+    }
+  },
+  "vehicle": {
+    "id": "sr-tdjwOs",
+    "name": "SLS (SR)",
+    "type": "LV",
+    "tl": 8.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "ee0e228b-da83-4670-a416-6260d67f5830",
+        "name": "SLS Structure",
+        "massTons": 70,
+        "cost": 200,
+        "capacityTons": 3029.8061000000002,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "3d4bb588-5b32-460d-bd82-c56a983e8adc",
+            "type": "engine",
+            "name": "Engine ×4",
+            "massKg": 13800,
+            "costMusd": 62,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-4",
+              "name": "Engine ×4",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 4,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 4120,
+              "dryMassKg": 13800,
+              "costMusd": 62,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "26829def-19c8-4b02-8fa0-bbb0fd946855",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 2620800,
+            "costMusd": 20.8,
+            "fuelTank": {
+              "id": "d54d0f74-bfe4-4edd-8d0b-0146762f71b2",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 2600000,
+              "tankMassKg": 20800,
+              "ullageFraction": 0.03,
+              "totalMassKg": 2620800
+            }
+          },
+          {
+            "id": "e3631d53-ae30-4225-9888-d236f3d2f209",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8.4,
+              "yearRange": "2020–2024",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 2634.6140000000005,
+        "attachedCost": 83.6,
+        "totalMassTons": 2704.6140000000005,
+        "totalCost": 283.6,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 2704.6140000000005,
+    "totalCost": 283.6,
+    "totalDeltaV": 7200,
+    "leoPayloadKg": 95000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": 27000,
+    "createdAt": "2026-05-03T12:13:19.662Z",
+    "updatedAt": "2026-05-03T12:13:19.662Z",
+    "notes": "Converted from SimpleRockets craft tdjwOs. Origin: USA. URL: https://www.simplerockets.com/c/tdjwOs"
+  }
+}
