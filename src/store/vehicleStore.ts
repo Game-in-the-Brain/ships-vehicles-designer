@@ -34,8 +34,10 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
     compareVehicles: [],
 
     loadTables: async () => {
-      // Compute actual base path from document location (handles trailing slash issues)
-      const base = new URL('.', document.baseURI).pathname;
+      // Compute actual base path — ensure trailing slash so relative paths resolve correctly
+      const url = new URL(document.baseURI);
+      if (!url.pathname.endsWith('/')) url.pathname += '/';
+      const base = url.pathname;
       try {
         const [ppRes, dRes, aRes, cRes, cmRes, bRes, sRes] = await Promise.all([
           fetch(`${base}data/power_plants.json`), fetch(`${base}data/drives.json`),
@@ -124,7 +126,9 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
     setCurrentVehicle: (vehicle) => set({ currentVehicle: vehicle }),
     setScreen: (screen) => set({ currentScreen: screen }),
     loadLibraryVehicle: async (vehicleId) => {
-      const base = new URL('.', document.baseURI).pathname;
+      const url = new URL(document.baseURI);
+      if (!url.pathname.endsWith('/')) url.pathname += '/';
+      const base = url.pathname;
       try {
         const res = await fetch(`${base}data/library/${vehicleId}.json`);
         if (!res.ok) throw new Error(`Failed to load ${vehicleId}`);
