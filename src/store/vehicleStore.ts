@@ -6,7 +6,8 @@ import type { PowerPlant, Drive, AvionicsUnit, ComputerSystem, CrewModule, Bridg
 interface StoreState {
   powerPlants: PowerPlant[]; drives: Drive[]; avionics: AvionicsUnit[];
   computers: ComputerSystem[]; crewModules: CrewModule[]; bridgeTypes: BridgeType[];
-  sensors: Sensor[]; loaded: boolean; currentVehicle: VehicleDesign | null;
+  sensors: Sensor[]; loaded: boolean; loadError: string | null;
+  currentVehicle: VehicleDesign | null;
   currentScreen: AppScreen; settings: AppSettings; compareVehicles: VehicleDesign[];
 }
 
@@ -28,7 +29,7 @@ interface StoreActions {
 export const useVehicleStore = create<StoreState & StoreActions>()(
   immer(persist((set, get) => ({
     powerPlants: [], drives: [], avionics: [], computers: [], crewModules: [],
-    bridgeTypes: [], sensors: [], loaded: false, currentVehicle: null,
+    bridgeTypes: [], sensors: [], loaded: false, loadError: null, currentVehicle: null,
     currentScreen: 'design', settings: { theme: 'dark', units: 'metric' },
     compareVehicles: [],
 
@@ -41,6 +42,12 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
           fetch(`${base}data/crew_modules.json`), fetch(`${base}data/bridge_types.json`),
           fetch(`${base}data/sensors.json`),
         ]);
+        // Check for HTTP errors
+        const responses = [ppRes, dRes, aRes, cRes, cmRes, bRes, sRes];
+        const names = ['power_plants', 'drives', 'avionics', 'computers', 'crew_modules', 'bridge_types', 'sensors'];
+        for (let i = 0; i < responses.length; i++) {
+          if (!responses[i].ok) throw new Error(`Failed to load ${names[i]}: ${responses[i].status} ${responses[i].statusText}`);
+        }
         const [ppData, dData, aData, cData, cmData, bData, sData] = await Promise.all([
           ppRes.json(), dRes.json(), aRes.json(), cRes.json(), cmRes.json(), bRes.json(), sRes.json()
         ]);
@@ -48,9 +55,12 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
           powerPlants: ppData.power_plants, drives: dData.drives,
           avionics: aData.avionics, computers: cData.computers,
           crewModules: cmData.crew_modules, bridgeTypes: bData.bridge_types,
-          sensors: sData.sensors, loaded: true,
+          sensors: sData.sensors, loaded: true, loadError: null,
         });
-      } catch (err) { console.error('Failed to load component tables:', err); }
+      } catch (err: any) {
+        console.error('Failed to load component tables:', err);
+        set({ loaded: true, loadError: err?.message || 'Unknown error loading component data' });
+      }
     },
 
     createVehicle: (name) => {

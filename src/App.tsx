@@ -7,7 +7,7 @@ import CompareScreen from './components/CompareScreen';
 import { Rocket, Wrench, BookOpen, Settings, Scale } from 'lucide-react';
 
 function App() {
-  const { loaded, loadTables, currentVehicle, createVehicle, currentScreen, setScreen } = useVehicleStore();
+  const { loaded, loadTables, loadError, currentVehicle, createVehicle, currentScreen, setScreen } = useVehicleStore();
 
   useEffect(() => { if (!loaded) loadTables(); }, [loaded, loadTables]);
 
@@ -17,6 +17,21 @@ function App() {
         <div className="text-center">
           <Rocket className="w-12 h-12 mx-auto mb-4 text-ms-cyan animate-pulse" />
           <p className="text-ms-ink-soft">Loading component tables...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (loadError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-ms-bg text-ms-ink font-mono px-6">
+        <div className="text-center max-w-lg">
+          <Rocket className="w-12 h-12 mx-auto mb-4 text-ms-warn" />
+          <h1 className="text-xl font-display font-bold mb-2 text-ms-warn">Failed to Load Data</h1>
+          <p className="text-ms-ink-soft mb-6 text-sm">{loadError}</p>
+          <button onClick={() => { useVehicleStore.setState({ loaded: false, loadError: null }); loadTables(); }} className="px-6 py-3 bg-ms-cyan text-ms-bg font-mono font-semibold text-sm hover:bg-ms-cyan-dim transition-colors">
+            RETRY
+          </button>
         </div>
       </div>
     );
