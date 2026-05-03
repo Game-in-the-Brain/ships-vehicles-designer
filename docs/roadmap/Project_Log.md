@@ -1,6 +1,6 @@
 # Mneme Vehicle Designer — Project Log & Roadmap
 
-**Last Updated:** 2026-05-02  
+**Last Updated:** 2026-05-03  
 **Current Phase:** v0.1 Specification Complete → v0.2 Data & Types  
 **Next Milestone:** M1 (PWA Shell and Tooling)
 
@@ -24,18 +24,24 @@
 | 2026-05-02 | TypeScript type definitions (VehicleDesign, Stage, Engine, etc.) | `src/types/index.ts` |
 | 2026-05-02 | Feature Design Records (FDR-001 through FDR-006) | `docs/fdrs/FDR-001` … `FDR-006` |
 | 2026-05-02 | CE ShipGen → MSDS integration notes | `docs/mneme_improvements.md` |
+| 2026-05-03 | v0.01: Recovery after git clean, initial deploy scripts | `scripts/deploy.mjs`, `scripts/inline-build.py` |
+| 2026-05-03 | v0.02: Versioning system (0.01 increments), visible version in UI | `VERSION`, `scripts/bump-version.mjs`, `src/version.ts` |
+| 2026-05-03 | v0.03: Fix base path computation for trailing-slash URLs | `src/store/vehicleStore.ts` |
+| 2026-05-03 | v0.04: Component tables screen, import/export, version header | `src/components/TablesScreen.tsx`, `src/utils/exportImport.ts` |
+| 2026-05-03 | v0.05: N1-L3 Soviet lunar rocket data, Saturn V vs N1 compare prototype | `data/library/n1-l3.json`, `src/components/CompareScreen.tsx` |
 
 ### 📊 Statistics
 
 | Metric | Count |
 |--------|-------|
 | Specification documents | 4 |
-| Data tables (JSON) | 2 |
+| Data tables (JSON) | 7 component catalogs + 8 library vehicles |
 | Type definitions | 12 interfaces, 8 type aliases |
 | FDRs | 6 |
-| Historical rockets cataloged | 26 |
+| Historical rockets cataloged | 27 |
 | Power plant entries | 19 |
 | Drive entries | 13 |
+| App versions deployed | 5 (v0.01 → v0.05) |
 | Lines of documentation | ~2,500 |
 
 ---
@@ -186,7 +192,8 @@ At each milestone, the app must pass these tests before proceeding:
 
 | Issue | Severity | Mitigation |
 |-------|----------|------------|
-| No build toolchain yet | 🔴 High | M1 is top priority |
+| No build toolchain yet | 🟢 Low | Vite + React + TypeScript scaffold working |
+| Forgejo Pages white-page bug | 🟢 Low | CSS/JS inlining fixed; deploy script automated |
 | Historical rocket data accuracy | 🟡 Medium | Cross-reference 3+ sources; flag estimates |
 | CE ShipGen diverges from MSDS model | 🟡 Medium | `mneme_improvements.md` documents differences |
 | 3D bridge is unproven | 🟢 Low | De-prioritized to M6; PWA is primary value |
@@ -214,11 +221,58 @@ At each milestone, the app must pass these tests before proceeding:
 
 ## 6. Next Actions
 
-1. **Implement M1 (PWA Shell)** — Create Vite scaffold, install dependencies, configure PWA plugin
-2. **Populate historical JSON designs** — Convert Saturn V, Falcon 9, etc. into `VehicleDesign` JSON
-3. **Build component primitives** — MsPanel, MsField, MsNum, MsData, MsButton
-4. **Implement calculation engine** — `deltaV.ts`, `massBudget.ts`, `cost.ts`
-5. **Create library index** — `data/library/index.json` with 26 entries
+1. **Implement multi-launcher comparison** — See §7 below
+2. **Build component primitives** — MsPanel, MsField, MsNum, MsData, MsButton
+3. **Implement calculation engine** — `deltaV.ts`, `massBudget.ts`, `cost.ts`
+4. **Populate remaining historical JSON designs** — Energia, Starship, SLS, Long March
+5. **Stage Designer & Delta-V Validator** — M4 core workspace
+
+---
+
+## 7. Feature Plan: Multi-Launcher Comparison
+
+### Goal
+View multiple launchers side-by-side in a configurable grid. Start with "two launchers" mode (Saturn V vs N1), extend to 3–4 launchers.
+
+### Two-Launchers Mode (v0.06)
+- **Layout**: 2-column grid, full-height cards
+- **Quick-load buttons**: "Saturn V vs N1", "Falcon 9 vs Starship", "Custom..."
+- **Metrics displayed**:
+  - Header: Name, origin flag, TL, PMR, status
+  - Mass: Total, dry, propellant per stage
+  - Performance: ΔV, TWR, Isp (vac/sea)
+  - Payload: LEO, GTO, TLI bars (normalized to max)
+  - Propulsion: Engine count, thrust, chemistry
+  - Cost: Total M$, per-kg to LEO
+  - Stages: Expandable tree (SL2) with component counts
+- **Actions**: Remove either, swap left/right, add notes
+
+### Multi-Launchers Mode (v0.07)
+- **Layout**: 3-column (desktop), 2-column (tablet), carousel (mobile)
+- **Launcher selector**: Dropdown from library + "Load from file"
+- **Comparison table**: Dense row-per-metric, column-per-vehicle
+  - Highlight winner per row (green)
+  - Sort rows by difference magnitude
+- **Filter**: Show only differences > threshold
+- **Export**: Screenshot or CSV of comparison table
+
+### Russian Competitor Quick-Add (v0.06)
+- In any comparison view, button: "+ Russian Competitor"
+- Auto-selects N1, Energia, or Proton based on current vehicle class
+- If comparing USA vehicles → suggests USSR counterpart
+- If comparing modern → suggests Long March or Angara
+
+### Data Needed
+| Vehicle | Status | File |
+|---------|--------|------|
+| Saturn V | ✅ Done | `data/library/saturn-v.json` |
+| N1-L3 | ✅ Done | `data/library/n1-l3.json` |
+| Energia-Buran | 📝 Needed | `data/library/energia.json` |
+| Starship | 📝 Needed | `data/library/starship.json` |
+| SLS Block 1 | 📝 Needed | `data/library/sls.json` |
+| Long March 5 | 📝 Needed | `data/library/long-march-5.json` |
+| Falcon Heavy | 📝 Needed | `data/library/falcon-heavy.json` |
+| Proton-M | 📝 Needed | `data/library/proton-m.json` |
 
 ---
 
