@@ -67,7 +67,7 @@ function App() {
           <span className="text-[10px] text-ms-ink-dim font-mono">v{VERSION}</span>
         </div>
         <div className="text-[10px] text-ms-ink-dim font-mono">
-          {currentVehicle.name} · {currentVehicle.structures.length} structures · {currentVehicle.totalMassTons.toFixed(1)} t
+          {currentVehicle.name} · {currentVehicle.structures.length} structures · {currentVehicle.totalMassTons.toLocaleString('en-US', {minimumFractionDigits: 1})} t
         </div>
       </header>
 

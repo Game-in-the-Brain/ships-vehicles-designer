@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
+import { fmtNum, fmtDeltaV, fmtMass, fmtCost } from '../utils/formatters';
 import MsPanel from './primitives/MsPanel';
 import MsNum from './primitives/MsNum';
 import ChemistryBadge from './ChemistryBadge';
@@ -29,8 +30,8 @@ export default function StructureBuilder() {
             <span className="text-xs font-mono text-ms-ink-dim">{currentVehicle.structures.length} structures</span>
           </div>
           <div className="flex items-center gap-3">
-            <MsNum value={currentVehicle.totalMassTons.toFixed(1)} unit="t" size="sm" label="Mass" />
-            <MsNum value={currentVehicle.totalDeltaV?.toFixed(0) || '—'} unit="m/s" size="sm" label="ΔV" />
+            <MsNum value={fmtNum(currentVehicle.totalMassTons, 1)} unit="t" size="sm" label="Mass" />
+            <MsNum value={currentVehicle.totalDeltaV ? fmtNum(currentVehicle.totalDeltaV / 1000, 2) : '—'} unit="km/s" size="sm" label="ΔV" />
           </div>
         </div>
       </div>
@@ -42,8 +43,8 @@ export default function StructureBuilder() {
             <MsPanel key={structure.id} title={structure.name} keyword={`${structure.capacityUsedPercent.toFixed(0)}%`}>
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-4 text-xs font-mono">
-                  <span>Mass: {structure.totalMassTons.toFixed(1)} t</span>
-                  <span>Cost: {structure.totalCost.toFixed(1)} M$</span>
+                  <span>Mass: {fmtMass(structure.totalMassTons)}</span>
+                  <span>Cost: {fmtCost(structure.totalCost)}</span>
                   <span className={structure.overCapacity ? 'text-ms-warn' : 'text-ms-good'}>
                     {structure.overCapacity ? 'OVER CAPACITY' : 'OK'}
                   </span>
@@ -70,7 +71,7 @@ export default function StructureBuilder() {
                           } />
                         )}
                         <span className="font-semibold">{component.name}</span>
-                        <span className="text-ms-ink-dim">{(component.massKg / 1000).toFixed(2)} t</span>
+                        <span className="text-ms-ink-dim">{fmtNum(component.massKg / 1000, 2)} t</span>
                       </div>
                       <button onClick={() => removeComponent(structure.id, component.id)} className="p-1 text-ms-ink-dim hover:text-ms-warn">
                         <Trash2 className="w-3 h-3" />

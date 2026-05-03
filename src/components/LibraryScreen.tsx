@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
+import { fmtNum, fmtDeltaV, fmtMass } from '../utils/formatters';
 import { convertSimpleRocketsToMSDS } from '../calculations/simpleRocketsConverter';
 import type { SimpleRocketsCraft } from '../calculations/simpleRocketsConverter';
 import type { VehicleDesign } from '../types';
@@ -150,7 +151,7 @@ export default function LibraryScreen() {
                     <div className="text-xs text-ms-ink-soft mb-3 line-clamp-2">{entry.description}</div>
                     <div className="flex items-center justify-between text-xs text-ms-ink-dim">
                       <span className="flex items-center gap-1"><Calendar className="w-3 h-3" /> {entry.firstFlight.slice(0, 4)}</span>
-                      <span className="flex items-center gap-1"><Weight className="w-3 h-3" /> {entry.totalMassTons.toFixed(0)} t</span>
+                      <span className="flex items-center gap-1"><Weight className="w-3 h-3" /> {fmtMass(entry.totalMassTons)}</span>
                     </div>
                   </MsPanel>
                 </div>

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
 import MsPanel from './primitives/MsPanel';
 import { Scale, X, Trash2, ArrowLeft, Weight, Zap, Rocket, Layers, Crosshair } from 'lucide-react';
+import { fmtNum, fmtDeltaV, fmtMass, fmtCost, fmtPayload } from '../utils/formatters';
 
 export default function CompareScreen() {
   const { compareVehicles, setCompareVehicles, setScreen, loadLibraryVehicle } = useVehicleStore();
@@ -119,18 +120,18 @@ export default function CompareScreen() {
                 <div className="border-t border-ms-hair pt-3">
                   <h4 className="text-xs font-display font-semibold text-ms-ink-dim mb-2 flex items-center gap-1"><Weight className="w-3 h-3" /> Mass &amp; Performance</h4>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total Mass</span><span className="font-semibold">{vehicle.totalMassTons.toFixed(0)} t</span></div>
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total Cost</span><span className="font-semibold">{vehicle.totalCost.toFixed(1)} M$</span></div>
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total ΔV</span><span className="font-semibold text-ms-good">{vehicle.totalDeltaV?.toFixed(0) ?? '—'} m/s</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total Mass</span><span className="font-semibold">{fmtMass(vehicle.totalMassTons)}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total Cost</span><span className="font-semibold">{fmtCost(vehicle.totalCost)}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">Total ΔV</span><span className="font-semibold text-ms-good">{fmtDeltaV(vehicle.totalDeltaV)}</span></div>
                   </div>
                 </div>
 
                 <div className="border-t border-ms-hair pt-3">
                   <h4 className="text-xs font-display font-semibold text-ms-ink-dim mb-2 flex items-center gap-1"><Zap className="w-3 h-3" /> Payload</h4>
                   <div className="space-y-2">
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">LEO</span><span className="font-semibold">{vehicle.leoPayloadKg ? (vehicle.leoPayloadKg / 1000).toFixed(1) + ' t' : '—'}</span></div>
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">GTO</span><span className="font-semibold">{vehicle.gtoPayloadKg ? (vehicle.gtoPayloadKg / 1000).toFixed(1) + ' t' : '—'}</span></div>
-                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">TLI</span><span className="font-semibold text-ms-amber">{vehicle.tliPayloadKg ? (vehicle.tliPayloadKg / 1000).toFixed(1) + ' t' : '—'}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">LEO</span><span className="font-semibold">{fmtPayload(vehicle.leoPayloadKg)}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">GTO</span><span className="font-semibold">{fmtPayload(vehicle.gtoPayloadKg)}</span></div>
+                    <div className="flex justify-between text-xs"><span className="text-ms-ink-soft">TLI</span><span className="font-semibold text-ms-amber">{fmtPayload(vehicle.tliPayloadKg)}</span></div>
                   </div>
                 </div>
 
@@ -152,10 +153,10 @@ export default function CompareScreen() {
                   <div className="space-y-2">
                     {vehicle.structures.map((structure, si) => (
                       <div key={structure.id} className="text-xs">
-                        <div className="flex justify-between"><span className="font-semibold">{si + 1}. {structure.name}</span><span className="text-ms-ink-dim">{structure.totalMassTons.toFixed(0)} t</span></div>
+                        <div className="flex justify-between"><span className="font-semibold">{si + 1}. {structure.name}</span><span className="text-ms-ink-dim">{fmtMass(structure.totalMassTons)}</span></div>
                         <div className="flex justify-between text-ms-ink-soft mt-0.5">
                           <span>{structure.components.length} components</span>
-                          <span>{structure.capacityTons} t cap · {(structure.capacityUsedPercent).toFixed(0)}%</span>
+                          <span>{fmtNum(structure.capacityTons, 0)} t cap · {fmtNum(structure.capacityUsedPercent, 0)}%</span>
                         </div>
                       </div>
                     ))}

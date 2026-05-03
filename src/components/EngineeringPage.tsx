@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useVehicleStore } from '../store/vehicleStore';
+import { fmtNum } from '../utils/formatters';
 import MsPanel from './primitives/MsPanel';
 import { Wrench, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -72,7 +73,7 @@ export default function EngineeringPage() {
             <div className="space-y-3 text-xs">
               <div className="flex justify-between"><span className="text-ms-ink-dim">Total Components</span><span>{allComponents.length}</span></div>
               <div className="flex justify-between"><span className="text-ms-ink-dim">Crew Capacity</span><span>{totalCrew}</span></div>
-              <div className="flex justify-between"><span className="text-ms-ink-dim">Computing</span><span>{totalComputing.toFixed(1)} MIPS</span></div>
+              <div className="flex justify-between"><span className="text-ms-ink-dim">Computing</span><span>{fmtNum(totalComputing, 1)} MIPS</span></div>
               <div className="flex justify-between"><span className="text-ms-ink-dim">Structures</span><span>{currentVehicle.structures.length}</span></div>
             </div>
           </MsPanel>
