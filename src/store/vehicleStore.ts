@@ -34,7 +34,8 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
     compareVehicles: [],
 
     loadTables: async () => {
-      const base = (import.meta as any).env?.BASE_URL || '/';
+      // Compute actual base path from document location (handles trailing slash issues)
+      const base = new URL('.', document.baseURI).pathname;
       try {
         const [ppRes, dRes, aRes, cRes, cmRes, bRes, sRes] = await Promise.all([
           fetch(`${base}data/power_plants.json`), fetch(`${base}data/drives.json`),
@@ -123,7 +124,7 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
     setCurrentVehicle: (vehicle) => set({ currentVehicle: vehicle }),
     setScreen: (screen) => set({ currentScreen: screen }),
     loadLibraryVehicle: async (vehicleId) => {
-      const base = (import.meta as any).env?.BASE_URL || '/';
+      const base = new URL('.', document.baseURI).pathname;
       try {
         const res = await fetch(`${base}data/library/${vehicleId}.json`);
         if (!res.ok) throw new Error(`Failed to load ${vehicleId}`);
