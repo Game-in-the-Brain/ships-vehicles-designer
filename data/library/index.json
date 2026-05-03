@@ -2,7 +2,7 @@
   "_meta": {
     "format": "mneme-library-index",
     "version": "0.3",
-    "count": 6
+    "count": 7
   },
   "vehicles": [
     {
@@ -21,7 +21,7 @@
       "firstFlight": "1967-11-09",
       "origin": "USA",
       "description": "Apollo-era super-heavy lift. 13 launches, 0 failures. Calibration anchor for TL 7.4.",
-      "thumbnail": "🚀"
+      "thumbnail": "\ud83d\ude80"
     },
     {
       "id": "falcon-9",
@@ -39,7 +39,7 @@
       "firstFlight": "2010-06-04",
       "origin": "USA",
       "description": "First orbital-class reusable rocket. 300+ successful landings. Workhorse of the NewSpace era.",
-      "thumbnail": "🦅"
+      "thumbnail": "\ud83e\udd85"
     },
     {
       "id": "apollo-lm",
@@ -57,7 +57,7 @@
       "firstFlight": "1969-07-20",
       "origin": "USA",
       "description": "First crewed vehicle to land on the Moon. Two-stage: descent stage remains on surface; ascent stage returns crew to orbit. 6 successful landings.",
-      "thumbnail": "🌙"
+      "thumbnail": "\ud83c\udf19"
     },
     {
       "id": "artemis-hls",
@@ -75,7 +75,7 @@
       "firstFlight": "2026-01-01",
       "origin": "USA",
       "description": "Modern lunar lander for Artemis program. Transfer Element + Lander Module. Supports 4 astronauts for 14 days. Deep-throttle hydrolox engines.",
-      "thumbnail": "🌑"
+      "thumbnail": "\ud83c\udf11"
     },
     {
       "id": "apollo-csm",
@@ -93,7 +93,7 @@
       "firstFlight": "1966-02-26",
       "origin": "USA",
       "description": "Apollo crew vehicle for lunar and Earth orbit. Service Module provides propulsion and power; Command Module returns crew to Earth. 15 crewed flights.",
-      "thumbnail": "🛰️"
+      "thumbnail": "\ud83d\udef0\ufe0f"
     },
     {
       "id": "orion-crew",
@@ -111,7 +111,25 @@
       "firstFlight": "2014-12-05",
       "origin": "USA",
       "description": "Modern deep-space crew capsule for Artemis missions. European Service Module provides propulsion and power. Crew of 4 for up to 21 days.",
-      "thumbnail": "⭐"
+      "thumbnail": "\u2b50"
+    },
+    {
+      "id": "n1-l3",
+      "name": "N1-L3",
+      "type": "LV",
+      "tl": 7.35,
+      "pmr": 8,
+      "classification": "K-GG/4S/URS-TLI",
+      "kind": "LV-UH-CC",
+      "leoPayloadKg": 95000,
+      "tliPayloadKg": 23500,
+      "totalDeltaV": 10850,
+      "totalMassTons": 2926,
+      "status": "cancelled",
+      "firstFlight": "1969-02-21",
+      "origin": "USSR",
+      "description": "Soviet lunar rocket. 30+8+4+1 NK engines. Four flights, all failures. Cancelled after Apollo success.",
+      "thumbnail": "\u262d"
     }
   ]
 }

@@ -1,0 +1,258 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "Soviet Space Program Archives, N1-L3 Technical Documentation",
+    "calibration": false
+  },
+  "vehicle": {
+    "id": "n1-l3",
+    "name": "N1-L3",
+    "type": "LV",
+    "tl": 7.35,
+    "pmr": 8,
+    "structures": [
+      {
+        "id": "n1-block-a",
+        "name": "Block A First Stage",
+        "massTons": 178,
+        "cost": 38,
+        "capacityTons": 2160,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "n1-a-engines",
+            "type": "engine",
+            "name": "NK-15 Cluster ×30",
+            "massKg": 12480,
+            "costMusd": 9.0,
+            "engineAssembly": {
+              "id": "nk15-cluster",
+              "name": "NK-15 + Fixed Bell ×30",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "fixed-bell-1",
+              "count": 30,
+              "vacuumIsp": 318,
+              "seaLevelIsp": 297,
+              "totalThrustKn": 5040,
+              "dryMassKg": 12480,
+              "costMusd": 9.0,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "n1-a-fuel",
+            "type": "fuel_tank",
+            "name": "RG-1/LOX Tank",
+            "massKg": 1938700,
+            "costMusd": 14.0,
+            "fuelTank": {
+              "id": "n1a-fuel",
+              "name": "RG-1/LOX Tank",
+              "fuelType": "RG-1/LOX",
+              "propellantMassKg": 1920000,
+              "tankMassKg": 18700,
+              "ullageFraction": 0.025,
+              "totalMassKg": 1938700
+            }
+          },
+          {
+            "id": "n1-a-avionics",
+            "type": "avionics",
+            "name": "Analog Flight Control System",
+            "massKg": 45,
+            "costMusd": 1.5,
+            "avionicsUnit": {
+              "id": "av-analog-72",
+              "category": "guidance",
+              "name": "Analog Flight Control System",
+              "shortName": "Analog GNC",
+              "tl": 7.2,
+              "yearRange": "1965–1972",
+              "massKg": 45,
+              "costMusd": 1.5,
+              "powerWatts": 400,
+              "reliability": 0.82,
+              "capabilities": ["analog_computer", "gyro_platform", "radio_guidance"],
+              "redundancy": "dual",
+              "computingMips": 0.05,
+              "notes": "Soviet analog control system. Less capable than Saturn V digital systems but proven on R-7 derivatives.",
+              "examples": ["N1 KORD system"]
+            }
+          }
+        ],
+        "attachedMassTons": 1956.18,
+        "attachedCost": 24.5,
+        "totalMassTons": 2134.18,
+        "totalCost": 62.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 90.6
+      },
+      {
+        "id": "n1-block-b",
+        "name": "Block B Second Stage",
+        "massTons": 62,
+        "cost": 18,
+        "capacityTons": 520,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "n1-b-engines",
+            "type": "engine",
+            "name": "NK-15V Cluster ×8",
+            "massKg": 2680,
+            "costMusd": 4.2,
+            "engineAssembly": {
+              "id": "nk15v-cluster",
+              "name": "NK-15V + Fixed Bell ×8",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "fixed-bell-1",
+              "count": 8,
+              "vacuumIsp": 325,
+              "seaLevelIsp": null,
+              "totalThrustKn": 1434,
+              "dryMassKg": 2680,
+              "costMusd": 4.2,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "n1-b-fuel",
+            "type": "fuel_tank",
+            "name": "RG-1/LOX Tank",
+            "massKg": 506400,
+            "costMusd": 6.5,
+            "fuelTank": {
+              "id": "n1b-fuel",
+              "name": "RG-1/LOX Tank",
+              "fuelType": "RG-1/LOX",
+              "propellantMassKg": 501000,
+              "tankMassKg": 5400,
+              "ullageFraction": 0.025,
+              "totalMassKg": 506400
+            }
+          }
+        ],
+        "attachedMassTons": 509.08,
+        "attachedCost": 10.7,
+        "totalMassTons": 571.08,
+        "totalCost": 28.7,
+        "overCapacity": false,
+        "capacityUsedPercent": 97.9
+      },
+      {
+        "id": "n1-block-v",
+        "name": "Block V Third Stage",
+        "massTons": 18,
+        "cost": 8,
+        "capacityTons": 185,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "n1-v-engines",
+            "type": "engine",
+            "name": "NK-19 Cluster ×4",
+            "massKg": 920,
+            "costMusd": 2.1,
+            "engineAssembly": {
+              "id": "nk19-cluster",
+              "name": "NK-19 + Gimbaled Bell ×4",
+              "powerPlantId": "gg-kerolox-2",
+              "driveId": "gimbaled-bell-1",
+              "count": 4,
+              "vacuumIsp": 346,
+              "seaLevelIsp": null,
+              "totalThrustKn": 612,
+              "dryMassKg": 920,
+              "costMusd": 2.1,
+              "throttleRange": [0.5, 1]
+            }
+          },
+          {
+            "id": "n1-v-fuel",
+            "type": "fuel_tank",
+            "name": "RG-1/LOX Tank",
+            "massKg": 178200,
+            "costMusd": 3.0,
+            "fuelTank": {
+              "id": "n1v-fuel",
+              "name": "RG-1/LOX Tank",
+              "fuelType": "RG-1/LOX",
+              "propellantMassKg": 176000,
+              "tankMassKg": 2200,
+              "ullageFraction": 0.02,
+              "totalMassKg": 178200
+            }
+          }
+        ],
+        "attachedMassTons": 179.12,
+        "attachedCost": 5.1,
+        "totalMassTons": 197.12,
+        "totalCost": 13.1,
+        "overCapacity": false,
+        "capacityUsedPercent": 96.8
+      },
+      {
+        "id": "n1-block-g",
+        "name": "Block G Lunar Injection",
+        "massTons": 4.5,
+        "cost": 3.5,
+        "capacityTons": 25,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "n1-g-engine",
+            "type": "engine",
+            "name": "NK-31 ×1",
+            "massKg": 320,
+            "costMusd": 0.8,
+            "engineAssembly": {
+              "id": "nk31-single",
+              "name": "NK-31 + Gimbaled Bell",
+              "powerPlantId": "gg-kerolox-2",
+              "driveId": "gimbaled-bell-1",
+              "count": 1,
+              "vacuumIsp": 353,
+              "seaLevelIsp": null,
+              "totalThrustKn": 167,
+              "dryMassKg": 320,
+              "costMusd": 0.8,
+              "throttleRange": [0.5, 1]
+            }
+          },
+          {
+            "id": "n1-g-fuel",
+            "type": "fuel_tank",
+            "name": "RG-1/LOX Tank",
+            "massKg": 19200,
+            "costMusd": 0.5,
+            "fuelTank": {
+              "id": "n1g-fuel",
+              "name": "RG-1/LOX Tank",
+              "fuelType": "RG-1/LOX",
+              "propellantMassKg": 19000,
+              "tankMassKg": 200,
+              "ullageFraction": 0.02,
+              "totalMassKg": 19200
+            }
+          }
+        ],
+        "attachedMassTons": 19.52,
+        "attachedCost": 1.3,
+        "totalMassTons": 24.02,
+        "totalCost": 4.8,
+        "overCapacity": false,
+        "capacityUsedPercent": 78.1
+      }
+    ],
+    "totalMassTons": 2926.4,
+    "totalCost": 109.1,
+    "totalDeltaV": 10850,
+    "leoPayloadKg": 95000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": 23500,
+    "createdAt": "1969-02-21T00:00:00Z",
+    "updatedAt": "1972-11-23T00:00:00Z",
+    "notes": "Soviet N1-L3 lunar rocket. Four test flights, all failures. Most engines of any rocket (30+8+4+1=43 NK engines). KORD engine control system. Cancelled after Apollo success. Never flew crewed."
+  }
+}
