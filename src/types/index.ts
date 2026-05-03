@@ -80,7 +80,16 @@ export interface VehicleDesign {
   tliPayloadKg: number | null; createdAt: string; updatedAt: string; notes: string;
 }
 
-export type AppScreen = 'design' | 'engineering' | 'library' | 'compare' | 'settings';
+export type AppScreen = 'design' | 'engineering' | 'library' | 'compare' | 'settings' | 'tables';
+
+export type TableId = 'power_plants' | 'drives' | 'avionics' | 'computers' | 'crew_modules' | 'bridge_types' | 'sensors';
+
+export interface ComponentTable {
+  id: TableId;
+  name: string;
+  headers: string[];
+  rows: Record<string, string | number | null>[];
+}
 
 export interface AppSettings {
   theme: 'dark' | 'light';

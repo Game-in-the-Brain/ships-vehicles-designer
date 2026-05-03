@@ -5,7 +5,8 @@ import StructureBuilder from './components/StructureBuilder';
 import EngineeringPage from './components/EngineeringPage';
 import LibraryScreen from './components/LibraryScreen';
 import CompareScreen from './components/CompareScreen';
-import { Rocket, Wrench, BookOpen, Settings, Scale } from 'lucide-react';
+import TablesScreen from './components/TablesScreen';
+import { Rocket, Wrench, BookOpen, Settings, Scale, Database } from 'lucide-react';
 
 function App() {
   const { loaded, loadTables, loadError, currentVehicle, createVehicle, currentScreen, setScreen } = useVehicleStore();
@@ -44,9 +45,10 @@ function App() {
         <div className="text-center max-w-md px-6">
           <Rocket className="w-16 h-16 mx-auto mb-6 text-ms-cyan" />
           <h1 className="text-3xl font-display font-bold mb-2 tracking-tight">Mneme Vehicle Designer</h1>
-          <p className="text-ms-ink-soft mb-8 font-mono text-sm">
+          <p className="text-ms-ink-soft mb-2 font-mono text-sm">
             Structure-based mass design system.<br />Build vehicles from components. Physics is non-negotiable.
           </p>
+          <p className="text-xs text-ms-ink-dim mb-8 font-mono">v{VERSION}</p>
           <button onClick={() => createVehicle('Untitled Vehicle')} className="px-6 py-3 bg-ms-cyan text-ms-bg font-mono font-semibold text-sm hover:bg-ms-cyan-dim transition-colors">
             CREATE NEW VEHICLE
           </button>
@@ -57,11 +59,23 @@ function App() {
 
   return (
     <div className="min-h-screen bg-ms-bg">
+      {/* Top header bar with version */}
+      <header className="hidden lg:flex fixed top-0 left-16 right-0 h-10 bg-ms-elevated border-b border-ms-hair z-40 items-center justify-between px-4">
+        <div className="flex items-center gap-2">
+          <Rocket className="w-4 h-4 text-ms-cyan" />
+          <span className="text-xs font-display font-semibold text-ms-ink tracking-wide">MNEME VEHICLE DESIGNER</span>
+          <span className="text-[10px] text-ms-ink-dim font-mono">v{VERSION}</span>
+        </div>
+        <div className="text-[10px] text-ms-ink-dim font-mono">
+          {currentVehicle.name} · {currentVehicle.structures.length} structures · {currentVehicle.totalMassTons.toFixed(1)} t
+        </div>
+      </header>
+
       <nav className="fixed bottom-0 left-0 right-0 bg-ms-elevated border-t border-ms-hair z-50 lg:hidden">
         <div className="flex justify-around">
           {[
             { s: 'design', i: Rocket, l: 'Design' },
-            { s: 'engineering', i: Wrench, l: 'Eng' },
+            { s: 'tables', i: Database, l: 'Tables' },
             { s: 'library', i: BookOpen, l: 'Library' },
             { s: 'compare', i: Scale, l: 'Compare' },
             { s: 'settings', i: Settings, l: 'Settings' },
@@ -77,7 +91,7 @@ function App() {
         <Rocket className="w-6 h-6 text-ms-cyan mb-4" />
         {[
           { s: 'design', i: Rocket, t: 'Design' },
-          { s: 'engineering', i: Wrench, t: 'Engineering' },
+          { s: 'tables', i: Database, t: 'Tables' },
           { s: 'library', i: BookOpen, t: 'Library' },
           { s: 'compare', i: Scale, t: 'Compare' },
           { s: 'settings', i: Settings, t: 'Settings' },
@@ -88,11 +102,12 @@ function App() {
         ))}
       </nav>
 
-      <div className="lg:ml-16 pb-16 lg:pb-0">
+      <div className="lg:ml-16 lg:pt-10 pb-16 lg:pb-0">
         {currentScreen === 'design' && <StructureBuilder />}
         {currentScreen === 'engineering' && <EngineeringPage />}
         {currentScreen === 'library' && <LibraryScreen />}
         {currentScreen === 'compare' && <CompareScreen />}
+        {currentScreen === 'tables' && <TablesScreen />}
         {currentScreen === 'settings' && (
           <div className="min-h-screen flex items-center justify-center text-ms-ink-dim font-mono">
             <div className="text-center">

@@ -24,6 +24,8 @@ interface StoreActions {
   addToCompare: (vehicle: VehicleDesign) => void;
   removeFromCompare: (vehicleId: string) => void;
   clearCompare: () => void;
+  exportTables: () => string;
+  importTables: (data: any) => void;
 }
 
 export const useVehicleStore = create<StoreState & StoreActions>()(
@@ -146,6 +148,31 @@ export const useVehicleStore = create<StoreState & StoreActions>()(
       state.compareVehicles = state.compareVehicles.filter((v) => v.id !== vehicleId);
     }),
     clearCompare: () => set({ compareVehicles: [] }),
+
+    exportTables: () => {
+      const state = get();
+      return JSON.stringify({
+        power_plants: state.powerPlants,
+        drives: state.drives,
+        avionics: state.avionics,
+        computers: state.computers,
+        crew_modules: state.crewModules,
+        bridge_types: state.bridgeTypes,
+        sensors: state.sensors,
+      }, null, 2);
+    },
+
+    importTables: (data: any) => {
+      set((state) => {
+        if (data.power_plants) state.powerPlants = data.power_plants;
+        if (data.drives) state.drives = data.drives;
+        if (data.avionics) state.avionics = data.avionics;
+        if (data.computers) state.computers = data.computers;
+        if (data.crew_modules) state.crewModules = data.crew_modules;
+        if (data.bridge_types) state.bridgeTypes = data.bridge_types;
+        if (data.sensors) state.sensors = data.sensors;
+      });
+    },
   }), {
     name: 'mneme-vehicle-store',
     partialize: (state) => ({ currentVehicle: state.currentVehicle, settings: state.settings }),
