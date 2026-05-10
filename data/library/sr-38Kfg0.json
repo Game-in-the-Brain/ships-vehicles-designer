@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.266Z",
+    "originalUrl": "https://www.simplerockets.com/c/38Kfg0",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 550,
+      "referenceDeltaV": 7900
+    }
+  },
+  "vehicle": {
+    "id": "sr-38Kfg0",
+    "name": "Saturn IB (SR)",
+    "type": "LV",
+    "tl": 7.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "f8eec731-66b7-4081-b921-130c62cd6a05",
+        "name": "Saturn IB Structure",
+        "massTons": 52.420199999999994,
+        "cost": 748.8599999999999,
+        "capacityTons": 582.5289488,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "ca40344b-c215-47a6-b7c9-f52315f992bd",
+            "type": "engine",
+            "name": "Engine ×8",
+            "massKg": 27600,
+            "costMusd": 124,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-8",
+              "name": "Engine ×8",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 8,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 8240,
+              "dryMassKg": 27600,
+              "costMusd": 124,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "bcc8475f-6693-4e88-b141-887634023912",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 478914.912,
+            "costMusd": 3.8009120000000003,
+            "fuelTank": {
+              "id": "0f45e96b-afe0-44cc-bc46-52809da820e6",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 475114,
+              "tankMassKg": 3800.9120000000003,
+              "ullageFraction": 0.03,
+              "totalMassKg": 478914.912
+            }
+          },
+          {
+            "id": "c1147695-96aa-462f-a314-8918b5e63d64",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.4,
+              "yearRange": "1970–1974",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 506.546912,
+        "attachedCost": 131.30091199999998,
+        "totalMassTons": 558.967112,
+        "totalCost": 880.1609119999998,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 558.967112,
+    "totalCost": 880.1609119999998,
+    "totalDeltaV": 7900,
+    "leoPayloadKg": 18500,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.661Z",
+    "updatedAt": "2026-05-03T12:13:19.661Z",
+    "notes": "Converted from SimpleRockets craft 38Kfg0. Origin: USA. URL: https://www.simplerockets.com/c/38Kfg0"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.266Z",
+    "originalUrl": "https://www.simplerockets.com/c/1SR3e8",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 661,
+      "referenceDeltaV": 5500
+    }
+  },
+  "vehicle": {
+    "id": "sr-1SR3e8",
+    "name": "Vostok 1 (SR)",
+    "type": "LV",
+    "tl": 7.2,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "077d37fc-3f0e-400e-8e8c-fb5b7333c05c",
+        "name": "Vostok 1 Structure",
+        "massTons": 42.875,
+        "cost": 612.5,
+        "capacityTons": 696.5894999999999,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "e9ecbcd8-d045-4d9f-89b3-5ab10f4458e8",
+            "type": "engine",
+            "name": "Engine ×1",
+            "massKg": 1150,
+            "costMusd": 2.5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-1",
+              "name": "Engine ×1",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 1,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 845,
+              "dryMassKg": 1150,
+              "costMusd": 2.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "00216b4c-67c0-4a63-936c-0257b03a9198",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 604548,
+            "costMusd": 4.798,
+            "fuelTank": {
+              "id": "c3bb6e1f-c485-4db1-a8f0-a7235e308fea",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 599750,
+              "tankMassKg": 4798,
+              "ullageFraction": 0.03,
+              "totalMassKg": 604548
+            }
+          },
+          {
+            "id": "245a8670-dab9-4db9-ab5a-e4852926b0b2",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.2,
+              "yearRange": "1960–1964",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 605.73,
+        "attachedCost": 10.798,
+        "totalMassTons": 648.605,
+        "totalCost": 623.298,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 648.605,
+    "totalCost": 623.298,
+    "totalDeltaV": 5500,
+    "leoPayloadKg": 4700,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.660Z",
+    "updatedAt": "2026-05-03T12:13:19.660Z",
+    "notes": "Converted from SimpleRockets craft 1SR3e8. Origin: USSR. URL: https://www.simplerockets.com/c/1SR3e8"
+  }
+}

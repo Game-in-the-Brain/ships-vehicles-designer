@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.267Z",
+    "originalUrl": "https://www.simplerockets.com/c/B43Rb0",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 2400,
+      "referenceDeltaV": 33000
+    }
+  },
+  "vehicle": {
+    "id": "sr-B43Rb0",
+    "name": "Energia-Buran (RSS) (SR)",
+    "type": "Orb",
+    "tl": 7.8,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "38b7a335-662b-4822-8658-aa6ad5562621",
+        "name": "Energia-Buran (RSS) Structure",
+        "massTons": 70,
+        "cost": 300,
+        "capacityTons": 2400,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "9aeb12e0-c12f-43c2-9635-ba7f2ba1586a",
+            "type": "engine",
+            "name": "Engine ×4",
+            "massKg": 13800,
+            "costMusd": 62,
+            "engineAssembly": {
+              "id": "gg-hydrolox-1-fixed-bell-2-4",
+              "name": "Engine ×4",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 4,
+              "vacuumIsp": 421,
+              "seaLevelIsp": null,
+              "totalThrustKn": 4120,
+              "dryMassKg": 13800,
+              "costMusd": 62,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "33774f3a-6bbb-4d5f-8a70-5c75148e73a7",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 1915200,
+            "costMusd": 15.200000000000001,
+            "fuelTank": {
+              "id": "e3c59b2a-b727-4f7f-827c-a6e47e08a17b",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 1900000,
+              "tankMassKg": 15200,
+              "ullageFraction": 0.03,
+              "totalMassKg": 1915200
+            }
+          },
+          {
+            "id": "27e0ea70-716b-4c5c-b0dc-428b159c5414",
+            "type": "avionics",
+            "name": "Redundant Digital Flight System",
+            "massKg": 70,
+            "costMusd": 4.2,
+            "avionicsUnit": {
+              "id": "av-guidance-75",
+              "category": "guidance",
+              "name": "Redundant Digital Flight System",
+              "shortName": "Redundant Digital",
+              "tl": 7.8,
+              "yearRange": "1990–1994",
+              "massKg": 70,
+              "costMusd": 4.2,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 1929.07,
+        "attachedCost": 81.4,
+        "totalMassTons": 1999.07,
+        "totalCost": 381.4,
+        "overCapacity": false,
+        "capacityUsedPercent": 80.37791666666666
+      }
+    ],
+    "totalMassTons": 1999.07,
+    "totalCost": 381.4,
+    "totalDeltaV": 33000,
+    "leoPayloadKg": 30000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.663Z",
+    "updatedAt": "2026-05-03T12:13:19.663Z",
+    "notes": "Converted from SimpleRockets craft B43Rb0. Origin: USSR. URL: https://www.simplerockets.com/c/B43Rb0"
+  }
+}

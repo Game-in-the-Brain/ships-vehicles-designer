@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.269Z",
+    "originalUrl": "https://www.simplerockets.com/c/jt8106",
+    "conversionMeta": {
+      "useRealWorldMass": true,
+      "referenceWetMass": 693,
+      "referenceDeltaV": 10900
+    }
+  },
+  "vehicle": {
+    "id": "sr-jt8106",
+    "name": "Proton-M (SR)",
+    "type": "LV",
+    "tl": 8,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "8d461bf2-7de6-446c-ad98-56d1ff39e214",
+        "name": "Proton-M Structure",
+        "massTons": 31.499999999999996,
+        "cost": 25,
+        "capacityTons": 712.4411,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "586fb8d1-a86e-4090-ab37-a873b07baaba",
+            "type": "engine",
+            "name": "Engine ×6",
+            "massKg": 14700,
+            "costMusd": 21,
+            "engineAssembly": {
+              "id": "hyg-1-gimbaled-1-6",
+              "name": "Engine ×6",
+              "powerPlantId": "hyg-1",
+              "driveId": "gimbaled-1",
+              "count": 6,
+              "vacuumIsp": 316,
+              "seaLevelIsp": 275,
+              "totalThrustKn": 10800,
+              "dryMassKg": 14700,
+              "costMusd": 21,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "223213df-188e-4330-8d58-d50d485f767a",
+            "type": "fuel_tank",
+            "name": "N2O4/UDMH Tank",
+            "massKg": 604800,
+            "costMusd": 4.8,
+            "fuelTank": {
+              "id": "c78e2ad0-70d7-4524-9c7e-9c08a19bf432",
+              "name": "N2O4/UDMH Tank",
+              "fuelType": "N2O4/UDMH",
+              "propellantMassKg": 600000,
+              "tankMassKg": 4800,
+              "ullageFraction": 0.03,
+              "totalMassKg": 604800
+            }
+          },
+          {
+            "id": "4480f5da-378a-4723-950c-86dce7b62130",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8,
+              "yearRange": "2000–2004",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 619.514,
+        "attachedCost": 26.6,
+        "totalMassTons": 651.014,
+        "totalCost": 51.6,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 651.014,
+    "totalCost": 51.6,
+    "totalDeltaV": 10900,
+    "leoPayloadKg": 23000,
+    "gtoPayloadKg": 6900,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.661Z",
+    "updatedAt": "2026-05-03T12:13:19.661Z",
+    "notes": "Converted from SimpleRockets craft jt8106. Origin: USSR. URL: https://www.simplerockets.com/c/jt8106"
+  }
+}

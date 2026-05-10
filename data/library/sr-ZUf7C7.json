@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.268Z",
+    "originalUrl": "https://www.simplerockets.com/c/ZUf7C7",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 244,
+      "referenceDeltaV": 6900
+    }
+  },
+  "vehicle": {
+    "id": "sr-ZUf7C7",
+    "name": "Soyuz (SR)",
+    "type": "LV",
+    "tl": 7.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "4670f4c6-065b-4d89-bac9-350ee29e60d8",
+        "name": "Soyuz Structure",
+        "massTons": 22.4385,
+        "cost": 320.55,
+        "capacityTons": 252.33594399999998,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "1a894c78-5102-4147-8cb1-9630415e38dd",
+            "type": "engine",
+            "name": "Engine ×5",
+            "massKg": 5750,
+            "costMusd": 12.5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-5",
+              "name": "Engine ×5",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 5,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 4225,
+              "dryMassKg": 5750,
+              "costMusd": 12.5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "a179ce00-950f-4f23-8ed6-3821c399e5f7",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 213640.56,
+            "costMusd": 1.69556,
+            "fuelTank": {
+              "id": "15c30f72-798c-480a-a111-eb92d6d87114",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 211945,
+              "tankMassKg": 1695.56,
+              "ullageFraction": 0.03,
+              "totalMassKg": 213640.56
+            }
+          },
+          {
+            "id": "16c893b3-43a2-4361-a682-d30e84c84c2c",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital Discrete-Logic",
+              "tl": 7.4,
+              "yearRange": "1970–1974",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 219.42256,
+        "attachedCost": 17.69556,
+        "totalMassTons": 241.86106,
+        "totalCost": 338.24556,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 241.86106,
+    "totalCost": 338.24556,
+    "totalDeltaV": 6900,
+    "leoPayloadKg": 7150,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.660Z",
+    "updatedAt": "2026-05-03T12:13:19.660Z",
+    "notes": "Converted from SimpleRockets craft ZUf7C7. Origin: USSR. URL: https://www.simplerockets.com/c/ZUf7C7"
+  }
+}

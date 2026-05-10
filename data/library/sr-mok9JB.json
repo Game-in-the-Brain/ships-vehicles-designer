@@ -1,0 +1,115 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.3",
+    "source": "SimpleRockets community craft",
+    "convertedAt": "2026-05-03T12:26:47.269Z",
+    "originalUrl": "https://www.simplerockets.com/c/mok9JB",
+    "conversionMeta": {
+      "useRealWorldMass": false,
+      "referenceWetMass": 475,
+      "referenceDeltaV": 51400
+    }
+  },
+  "vehicle": {
+    "id": "sr-mok9JB",
+    "name": "Vulcan Centaur (SR)",
+    "type": "LV",
+    "tl": 8.4,
+    "pmr": 7,
+    "structures": [
+      {
+        "id": "74ad335f-1cff-4fd8-837c-f7ac6783ae17",
+        "name": "Vulcan Centaur Structure",
+        "massTons": 34.51,
+        "cost": 493,
+        "capacityTons": 496.13253999999995,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "a54883e6-50fd-420f-ac97-b5de25e056b0",
+            "type": "engine",
+            "name": "Engine ×2",
+            "massKg": 2300,
+            "costMusd": 5,
+            "engineAssembly": {
+              "id": "gg-kerolox-1-gimbaled-1-2",
+              "name": "Engine ×2",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "gimbaled-1",
+              "count": 2,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 264,
+              "totalThrustKn": 1690,
+              "dryMassKg": 2300,
+              "costMusd": 5,
+              "throttleRange": [
+                1,
+                1
+              ]
+            }
+          },
+          {
+            "id": "98495138-854c-409f-b07b-44e34b940862",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 429105.6,
+            "costMusd": 3.4056,
+            "fuelTank": {
+              "id": "3505febd-106e-46f1-a1af-c520366babb0",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 425700,
+              "tankMassKg": 3405.6,
+              "ullageFraction": 0.03,
+              "totalMassKg": 429105.6
+            }
+          },
+          {
+            "id": "0779e911-fe91-47e9-b36c-e4d43315269c",
+            "type": "avionics",
+            "name": "FPGA-Based Reconfigurable GNC",
+            "massKg": 14,
+            "costMusd": 0.8,
+            "avionicsUnit": {
+              "id": "av-guidance-80",
+              "category": "guidance",
+              "name": "FPGA-Based Reconfigurable GNC",
+              "shortName": "FPGA-Based Reconfigurable",
+              "tl": 8.4,
+              "yearRange": "2020–2024",
+              "massKg": 14,
+              "costMusd": 0.8,
+              "powerWatts": 250,
+              "reliability": 0.95,
+              "capabilities": [
+                "guidance",
+                "navigation",
+                "control"
+              ],
+              "redundancy": "dual",
+              "computingMips": 100,
+              "notes": "Auto-generated from SimpleRockets conversion",
+              "examples": []
+            }
+          }
+        ],
+        "attachedMassTons": 431.4196,
+        "attachedCost": 9.2056,
+        "totalMassTons": 465.9296,
+        "totalCost": 502.2056,
+        "overCapacity": false,
+        "capacityUsedPercent": 86.95652173913044
+      }
+    ],
+    "totalMassTons": 465.9296,
+    "totalCost": 502.2056,
+    "totalDeltaV": 51400,
+    "leoPayloadKg": 27200,
+    "gtoPayloadKg": 14700,
+    "tliPayloadKg": null,
+    "createdAt": "2026-05-03T12:13:19.662Z",
+    "updatedAt": "2026-05-03T12:13:19.662Z",
+    "notes": "Converted from SimpleRockets craft mok9JB. Origin: USA. URL: https://www.simplerockets.com/c/mok9JB"
+  }
+}

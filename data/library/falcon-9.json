@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "SpaceX public data, NASA Launch Services Program"
+  },
+  "vehicle": {
+    "id": "falcon-9",
+    "name": "Falcon 9 Block 5",
+    "type": "LV",
+    "tl": 7.6,
+    "pmr": 9,
+    "structures": [
+      {
+        "id": "f9-s1",
+        "name": "Falcon 9 First Stage",
+        "massTons": 25,
+        "cost": 15,
+        "capacityTons": 420,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "f9-s1-engines",
+            "type": "engine",
+            "name": "Merlin 1D+ Cluster ×9",
+            "massKg": 5040,
+            "costMusd": 13.5,
+            "engineAssembly": {
+              "id": "merlin-cluster",
+              "name": "Merlin 1D+ + Gimbaled Bell ×9",
+              "powerPlantId": "gg-kerolox-2",
+              "driveId": "gimbaled-2",
+              "count": 9,
+              "vacuumIsp": 311,
+              "seaLevelIsp": 282,
+              "totalThrustKn": 7605,
+              "dryMassKg": 5040,
+              "costMusd": 13.5,
+              "throttleRange": [0.39, 1]
+            }
+          },
+          {
+            "id": "f9-s1-fuel",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 403920,
+            "costMusd": 3.2,
+            "fuelTank": {
+              "id": "f9s1-fuel",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 400000,
+              "tankMassKg": 3200,
+              "ullageFraction": 0.03,
+              "totalMassKg": 403920
+            }
+          },
+          {
+            "id": "f9-s1-avionics",
+            "type": "avionics",
+            "name": "Reuse-Optimized Fleet Avionics",
+            "massKg": 6,
+            "costMusd": 0.3,
+            "avionicsUnit": {
+              "id": "av-guidance-83",
+              "category": "guidance",
+              "name": "Reuse-Optimized Fleet Avionics",
+              "shortName": "Fleet GNC",
+              "tl": 8.3,
+              "yearRange": "2015–2019",
+              "massKg": 6,
+              "costMusd": 0.3,
+              "powerWatts": 45,
+              "reliability": 0.97,
+              "capabilities": ["fleet_management", "rapid_reuse_software", "predictive_maintenance", "machine_learning_gnc"],
+              "redundancy": "dual",
+              "computingMips": 5000,
+              "notes": "Designed for rapid turnaround. Predictive maintenance algorithms. Fleet-wide software updates. ML-assisted trajectory optimization. Basis: Falcon 9 Block 5, Electron.",
+              "examples": ["Falcon 9 Block 5 avionics", "Electron GNC"]
+            }
+          },
+          {
+            "id": "f9-s1-computer",
+            "type": "computer",
+            "name": "Commercial Multi-Core Flight Computer",
+            "massKg": 1.5,
+            "costMusd": 0.2,
+            "computerSystem": {
+              "id": "comp-cots",
+              "name": "Commercial Multi-Core Flight Computer",
+              "shortName": "COTS FC",
+              "tl": 8.2,
+              "year": 2013,
+              "processor": "x86 dual-core, 1.2 GHz",
+              "memory": "17179869184",
+              "massKg": 1.5,
+              "costMusd": 0.2,
+              "powerWatts": 8,
+              "reliability": 0.999,
+              "redundancy": "triple",
+              "software": ["Linux_custom", "autopilot_stack"],
+              "notes": "Triple redundant with 2-out-of-3 voting. COTS processors with radiation monitoring. Basis: SpaceX Dragon."
+            }
+          },
+          {
+            "id": "f9-s1-sensor",
+            "type": "sensor",
+            "name": "Vision-Based Navigation Camera",
+            "massKg": 4,
+            "costMusd": 1.0,
+            "sensor": {
+              "id": "sensor-vision",
+              "name": "Vision-Based Navigation Camera",
+              "shortName": "Vision Nav",
+              "category": "landing",
+              "tl": 8.2,
+              "year": 2015,
+              "massKg": 4,
+              "costMusd": 1.0,
+              "powerWatts": 12,
+              "range": "visual",
+              "notes": "Camera-based terrain relative navigation for autonomous landing. Basis: Falcon 9 landing, HLS."
+            }
+          }
+        ],
+        "attachedMassTons": 408.9715,
+        "attachedCost": 18.2,
+        "totalMassTons": 433.9715,
+        "totalCost": 33.2,
+        "overCapacity": false,
+        "capacityUsedPercent": 97.4
+      },
+      {
+        "id": "f9-s2",
+        "name": "Falcon 9 Second Stage",
+        "massTons": 4,
+        "cost": 3,
+        "capacityTons": 55,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "f9-s2-engine",
+            "type": "engine",
+            "name": "Merlin 1D+ Vacuum",
+            "massKg": 640,
+            "costMusd": 1.5,
+            "engineAssembly": {
+              "id": "merlin-vac",
+              "name": "Merlin 1D+ + High-Expansion Bell",
+              "powerPlantId": "gg-kerolox-2",
+              "driveId": "fixed-bell-2",
+              "count": 1,
+              "vacuumIsp": 320,
+              "seaLevelIsp": null,
+              "totalThrustKn": 845,
+              "dryMassKg": 640,
+              "costMusd": 1.5,
+              "throttleRange": [0.39, 1]
+            }
+          },
+          {
+            "id": "f9-s2-fuel",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 100960,
+            "costMusd": 0.8,
+            "fuelTank": {
+              "id": "f9s2-fuel",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 100000,
+              "tankMassKg": 800,
+              "ullageFraction": 0.03,
+              "totalMassKg": 100960
+            }
+          }
+        ],
+        "attachedMassTons": 101.6,
+        "attachedCost": 2.3,
+        "totalMassTons": 105.6,
+        "totalCost": 5.3,
+        "overCapacity": false,
+        "capacityUsedPercent": 94.7
+      }
+    ],
+    "totalMassTons": 539.5715,
+    "totalCost": 38.5,
+    "totalDeltaV": 9800,
+    "leoPayloadKg": 22800,
+    "gtoPayloadKg": 8300,
+    "tliPayloadKg": null,
+    "createdAt": "2010-06-04T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "First orbital-class reusable rocket. First stage lands on drone ship or pad. 300+ successful landings. Basis: Falcon 9 Block 5 (2024)."
+  }
+}

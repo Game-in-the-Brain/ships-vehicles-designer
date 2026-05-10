@@ -1,0 +1,353 @@
+{
+  "_meta": {
+    "format": "mneme-vehicle",
+    "version": "0.2",
+    "source": "NASA NTRS, Apollo Program Summary Report",
+    "calibration": true
+  },
+  "vehicle": {
+    "id": "saturn-v",
+    "name": "Saturn V",
+    "type": "LV",
+    "tl": 7.4,
+    "pmr": 10,
+    "structures": [
+      {
+        "id": "s-ic",
+        "name": "S-IC First Stage",
+        "massTons": 130,
+        "cost": 45,
+        "capacityTons": 2300,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "s-ic-engines",
+            "type": "engine",
+            "name": "F-1 Cluster ×5",
+            "massKg": 5250,
+            "costMusd": 12.5,
+            "engineAssembly": {
+              "id": "f1-cluster",
+              "name": "F-1 + Fixed Bell ×5",
+              "powerPlantId": "gg-kerolox-1",
+              "driveId": "fixed-bell-1",
+              "count": 5,
+              "vacuumIsp": 304,
+              "seaLevelIsp": 263,
+              "totalThrustKn": 4225,
+              "dryMassKg": 5250,
+              "costMusd": 12.5,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "s-ic-fuel",
+            "type": "fuel_tank",
+            "name": "RP-1/LOX Tank",
+            "massKg": 2147040,
+            "costMusd": 17.0,
+            "fuelTank": {
+              "id": "sic-fuel",
+              "name": "RP-1/LOX Tank",
+              "fuelType": "RP-1/LOX",
+              "propellantMassKg": 2130000,
+              "tankMassKg": 17040,
+              "ullageFraction": 0.03,
+              "totalMassKg": 2147040
+            }
+          },
+          {
+            "id": "s-ic-avionics",
+            "type": "avionics",
+            "name": "Integrated-Circuit Flight Computer",
+            "massKg": 18,
+            "costMusd": 2.8,
+            "avionicsUnit": {
+              "id": "av-guidance-73",
+              "category": "guidance",
+              "name": "Integrated-Circuit Flight Computer",
+              "shortName": "IC GNC",
+              "tl": 7.3,
+              "yearRange": "1965–1969",
+              "massKg": 18,
+              "costMusd": 2.8,
+              "powerWatts": 250,
+              "reliability": 0.91,
+              "capabilities": ["ic_computer", "strapdown_imu", "digital_autopilot", "telemetry"],
+              "redundancy": "triple_modular",
+              "computingMips": 1.0,
+              "notes": "First IC-based space computers. Strapdown IMU support. Basis: Saturn V LVDC.",
+              "examples": ["Saturn V Instrument Unit", "LVDC"]
+            }
+          },
+          {
+            "id": "s-ic-sensor",
+            "type": "sensor",
+            "name": "Radar Altimeter",
+            "massKg": 12,
+            "costMusd": 2.0,
+            "sensor": {
+              "id": "sensor-radar-alt",
+              "name": "Radar Altimeter",
+              "shortName": "Radar Alt",
+              "category": "landing",
+              "tl": 7.4,
+              "year": 1969,
+              "massKg": 12,
+              "costMusd": 2.0,
+              "powerWatts": 25,
+              "range": "0–100 km",
+              "notes": "Measures altitude above surface for landing. Basis: Apollo LM radar, Shuttle landing radar."
+            }
+          }
+        ],
+        "attachedMassTons": 2152.32,
+        "attachedCost": 34.3,
+        "totalMassTons": 2282.32,
+        "totalCost": 79.3,
+        "overCapacity": false,
+        "capacityUsedPercent": 93.6
+      },
+      {
+        "id": "s-ii",
+        "name": "S-II Second Stage",
+        "massTons": 40,
+        "cost": 25,
+        "capacityTons": 500,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "s-ii-engines",
+            "type": "engine",
+            "name": "J-2 Cluster ×5",
+            "massKg": 16900,
+            "costMusd": 77.0,
+            "engineAssembly": {
+              "id": "j2-cluster",
+              "name": "J-2 + High-Expansion Bell ×5",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 5,
+              "vacuumIsp": 434,
+              "seaLevelIsp": null,
+              "totalThrustKn": 5150,
+              "dryMassKg": 16900,
+              "costMusd": 77.0,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "s-ii-fuel",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 446544,
+            "costMusd": 3.5,
+            "fuelTank": {
+              "id": "sii-fuel",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 443000,
+              "tankMassKg": 3544,
+              "ullageFraction": 0.03,
+              "totalMassKg": 446544
+            }
+          }
+        ],
+        "attachedMassTons": 463.44,
+        "attachedCost": 80.5,
+        "totalMassTons": 503.44,
+        "totalCost": 105.5,
+        "overCapacity": false,
+        "capacityUsedPercent": 92.7
+      },
+      {
+        "id": "s-ivb",
+        "name": "S-IVB + Apollo CSM",
+        "massTons": 15,
+        "cost": 30,
+        "capacityTons": 140,
+        "axis": "longitudinal",
+        "components": [
+          {
+            "id": "s-ivb-engine",
+            "type": "engine",
+            "name": "J-2 Vacuum",
+            "massKg": 3380,
+            "costMusd": 15.4,
+            "engineAssembly": {
+              "id": "j2-single",
+              "name": "J-2 + High-Expansion Bell",
+              "powerPlantId": "gg-hydrolox-1",
+              "driveId": "fixed-bell-2",
+              "count": 1,
+              "vacuumIsp": 434,
+              "seaLevelIsp": null,
+              "totalThrustKn": 1030,
+              "dryMassKg": 3380,
+              "costMusd": 15.4,
+              "throttleRange": [1, 1]
+            }
+          },
+          {
+            "id": "s-ivb-fuel",
+            "type": "fuel_tank",
+            "name": "LH2/LOX Tank",
+            "massKg": 109872,
+            "costMusd": 0.9,
+            "fuelTank": {
+              "id": "sivb-fuel",
+              "name": "LH2/LOX Tank",
+              "fuelType": "LH2/LOX",
+              "propellantMassKg": 109000,
+              "tankMassKg": 872,
+              "ullageFraction": 0.03,
+              "totalMassKg": 109872
+            }
+          },
+          {
+            "id": "apollo-avionics",
+            "type": "avionics",
+            "name": "Digital Discrete-Logic Guidance",
+            "massKg": 32,
+            "costMusd": 3.5,
+            "avionicsUnit": {
+              "id": "av-guidance-72",
+              "category": "guidance",
+              "name": "Digital Discrete-Logic Guidance",
+              "shortName": "Digital GNC",
+              "tl": 7.2,
+              "yearRange": "1960–1964",
+              "massKg": 32,
+              "costMusd": 3.5,
+              "powerWatts": 400,
+              "reliability": 0.89,
+              "capabilities": ["digital_guidance", "inertial_nav", "star_sighting", "closed_loop_control"],
+              "redundancy": "dual_channel",
+              "computingMips": 0.1,
+              "notes": "Discrete IC logic. Apollo Guidance Computer (AGC) class. DSKY interface. Basis: AGC, Gemini guidance.",
+              "examples": ["Apollo Guidance Computer", "Gemini OBC"]
+            }
+          },
+          {
+            "id": "apollo-computer",
+            "type": "computer",
+            "name": "Apollo Guidance Computer",
+            "massKg": 32,
+            "costMusd": 0.5,
+            "computerSystem": {
+              "id": "comp-agc",
+              "name": "Apollo Guidance Computer",
+              "shortName": "AGC",
+              "tl": 7.2,
+              "year": 1966,
+              "processor": "2.048 MHz IC logic",
+              "memory": "77824",
+              "massKg": 32,
+              "costMusd": 0.5,
+              "powerWatts": 55,
+              "reliability": 0.9999,
+              "redundancy": "none",
+              "software": ["COLOSSUS", "LUMINARY"],
+              "notes": "First digital computer in crewed spacecraft. Core rope memory woven by hand. Basis: Apollo program."
+            }
+          },
+          {
+            "id": "apollo-crew",
+            "type": "crew_module",
+            "name": "Triple-Seat Capsule",
+            "massKg": 850,
+            "costMusd": 12.0,
+            "crewModule": {
+              "id": "crew-triple-capsule",
+              "name": "Triple-Seat Capsule",
+              "shortName": "3-Seat Capsule",
+              "tl": 7.4,
+              "year": 1967,
+              "seats": 3,
+              "massKg": 850,
+              "costMusd": 12.0,
+              "volumeM3": 6.5,
+              "missionDurationDays": 14,
+              "notes": "Three-person command module. Basis: Apollo CM, Soyuz descent module."
+            }
+          },
+          {
+            "id": "apollo-bridge",
+            "type": "bridge",
+            "name": "Command Deck (3-Station)",
+            "massKg": 450,
+            "costMusd": 2.5,
+            "bridgeType": {
+              "id": "bridge-command-3",
+              "name": "Command Deck (3-Station)",
+              "shortName": "3-Station Deck",
+              "tl": 7.4,
+              "year": 1967,
+              "stations": 3,
+              "massKg": 450,
+              "costMusd": 2.5,
+              "minCrew": 2,
+              "maxCrew": 3,
+              "notes": "Dedicated commander, pilot, and systems stations. Basis: Apollo CM."
+            }
+          },
+          {
+            "id": "apollo-sensor-1",
+            "type": "sensor",
+            "name": "Star Tracker",
+            "massKg": 8,
+            "costMusd": 1.0,
+            "sensor": {
+              "id": "sensor-star-tracker",
+              "name": "Star Tracker",
+              "shortName": "Star Tracker",
+              "category": "navigation",
+              "tl": 7.4,
+              "year": 1972,
+              "massKg": 8,
+              "costMusd": 1.0,
+              "powerWatts": 5,
+              "range": "deep_space",
+              "notes": "Automatic star pattern recognition for attitude determination. Basis: Skylab, Viking."
+            }
+          },
+          {
+            "id": "apollo-sensor-2",
+            "type": "sensor",
+            "name": "High-Gain Communication Dish",
+            "massKg": 35,
+            "costMusd": 3.0,
+            "sensor": {
+              "id": "sensor-comm-dish",
+              "name": "High-Gain Communication Dish",
+              "shortName": "Comm Dish",
+              "category": "communication",
+              "tl": 7.4,
+              "year": 1969,
+              "massKg": 35,
+              "costMusd": 3.0,
+              "powerWatts": 50,
+              "range": "deep_space",
+              "notes": "Parabolic dish for long-range telemetry. Basis: Apollo CSM, Voyager."
+            }
+          }
+        ],
+        "attachedMassTons": 114.629,
+        "attachedCost": 37.9,
+        "totalMassTons": 129.629,
+        "totalCost": 67.9,
+        "overCapacity": false,
+        "capacityUsedPercent": 81.9
+      }
+    ],
+    "totalMassTons": 2915.389,
+    "totalCost": 252.7,
+    "totalDeltaV": 11290,
+    "leoPayloadKg": 118000,
+    "gtoPayloadKg": null,
+    "tliPayloadKg": 48600,
+    "createdAt": "1967-11-09T00:00:00Z",
+    "updatedAt": "2026-05-02T00:00:00Z",
+    "notes": "Apollo-era super-heavy lift. 13 successful launches, 0 failures. Calibration anchor for TL 7.4. First flight: Apollo 4 (1967)."
+  }
+}
