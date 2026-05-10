@@ -1,5 +1,7 @@
 # ships-vehicles-designer
 
+**Products:** [https://blog.gi7b.org](https://blog.gi7b.org)
+
 **Mneme Ships and Vehicles Designer**
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
